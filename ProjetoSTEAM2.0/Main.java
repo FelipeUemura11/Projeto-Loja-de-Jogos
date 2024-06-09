@@ -11,8 +11,7 @@ public class Main {
         Comunidade comunidade = new Comunidade();
         Biblioteca biblioteca = new Biblioteca();
         Loja loja = new Loja();
-        int opcao = 0;
-
+        
         while (true) {
             System.out.println("\n===== Menu Principal =====");
             System.out.println("1. Criar Perfil");
@@ -24,7 +23,7 @@ public class Main {
             System.out.println("7. Sair");
             System.out.print("Escolha uma opção: ");
 
-            opcao = scanner.nextInt();
+           int opcao = scanner.nextInt();
             scanner.nextLine(); // Limpar buffer
 
             switch (opcao) {
