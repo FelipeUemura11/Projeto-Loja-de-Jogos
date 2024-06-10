@@ -32,9 +32,9 @@ public class Main {
 
                     System.out.println("[1] Nova Conta");
                     System.out.println("[2] Fazer Login");
-                    System.out.println("[3] Voltar");
+                    System.out.println("[3] Voltar ao Menu");
 
-                    System.out.println("Escolha uma opcao: ");
+                    System.out.print("Escolha uma opcao: ");
                     opc = scan.nextInt();
                     scan.nextLine();
 
@@ -82,32 +82,65 @@ public class Main {
     }
 
     private static void criarPerfil(Scanner scan) {
-        System.out.print("Digite o nome do usuário: ");
+
+        System.out.print("Digite seu nome: ");
         String nomeUsuario = scan.nextLine();
-        System.out.print("Digite o email do usuário: ");
+
+        System.out.print("Digite seu email: ");
         String emailUsuario = scan.nextLine();
+
+        System.out.print("Digite seu cpf: ");
+        String cpf = scan.nextLine();
+
+        while(cpf.length() != 11){
+            System.out.println("Informe um cpf valido! ");
+            cpf = scan.nextLine();
+        }
+
         System.out.print("Digite a senha do usuário: ");
         String senhaUsuario = scan.nextLine();
 
-        perfis.add(new CadastroUsuario(new Perfil(nomeUsuario, emailUsuario), senhaUsuario, perfis));
+        int id = 0;
+
+        id++;
+
+        perfis.add(new CadastroUsuario(new Perfil(id, nomeUsuario, emailUsuario, cpf), senhaUsuario, perfis));
         System.out.println("Perfil criado com sucesso!");
     }
 
-    private static void fazerLogin(Scanner scan) {
+    private static void fazerLogin(Scanner scan){
+
         System.out.print("Digite o email: ");
         String email = scan.nextLine();
+
+        boolean verificado = false;
+
+        for(CadastroUsuario perfil : perfis){
+            while(!perfil.getPerfil().getEmail().equals(email)){
+                System.out.print("Email nao encontrado, digite novamente: ");
+                email = scan.nextLine();
+            }
+        }
+
         System.out.print("Digite a senha: ");
         String senha = scan.nextLine();
 
         for (CadastroUsuario perfil : perfis) {
-            if (perfil.getPerfil().getEmail().equals(email) && perfil.getSenha().equals(senha)) {
-                perfilLogado = perfil;
-                System.out.println("Login realizado com sucesso como " + perfilLogado.getPerfil().getNome() + "!");
-                perfilLogado.gerenciarCadastro(); // Direcionar para o menu do cadastro
-                return;
+            while(!perfil.getSenha().equals(senha)){
+                System.out.print("Senha incorreta, tente novamente: ");
+                senha = scan.nextLine();
             }
-        }
+            verificado = true;
 
-        System.out.println("Email ou senha incorretos!");
+            perfilLogado = perfil;
+            System.out.println("Login realizado com sucesso como " + perfilLogado.getPerfil().getNome() + "!");
+            perfilLogado.gerenciarCadastro(); // Direcionar para o menu do cadastro
+            break;
+        }
+        if(!verificado){
+            System.out.println("Erro : email ou senha incorretos");
+        }
     }
 }
+
+
