@@ -3,9 +3,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Loja {
-    private List<Jogo> destaques;
-    private List<Jogo> listaDeDesejos;
-    private List<Jogo> ofertas;
+    private List<ListaJogo> destaques;
+    private List<ListaJogo> listaDeDesejos;
+    private List<ListaJogo> ofertas;
     private Carrinho carrinho;
 
     public Loja() {
@@ -15,15 +15,15 @@ public class Loja {
         this.carrinho = new Carrinho();
     }
 
-    public void adicionarDestaque(Jogo jogo) {
+    public void adicionarDestaque(ListaJogo jogo) {
         destaques.add(jogo);
     }
 
-    public void adicionarListaDeDesejos(Jogo jogo) {
+    public void adicionarListaDeDesejos(ListaJogo jogo) {
         listaDeDesejos.add(jogo);
     }
 
-    public void adicionarOferta(Jogo jogo) {
+    public void adicionarOferta(ListaJogo jogo) {
         ofertas.add(jogo);
     }
 
@@ -61,12 +61,12 @@ public class Loja {
         }
     }
 
-    private void exibirJogos(List<Jogo> jogos, String tipo) {
+    private void exibirJogos(List<ListaJogo> jogos, String tipo) {
         System.out.println("\n===== " + tipo + " =====");
         if (jogos.isEmpty()) {
             System.out.println("Nenhum jogo disponível.");
         } else {
-            for (Jogo jogo : jogos) {
+            for (ListaJogo jogo : jogos) {
                 System.out.println(jogo);
                 System.out.println("----------------------------------");
             }

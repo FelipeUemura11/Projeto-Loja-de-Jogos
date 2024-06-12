@@ -3,13 +3,13 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Biblioteca {
-    private List<Jogo> jogos;
+    private List<ListaJogo> jogos;
 
     public Biblioteca() {
         this.jogos = new ArrayList<>();
     }
 
-    public void adicionarJogo(Jogo jogo) {
+    public void adicionarJogo(ListaJogo jogo) {
         jogos.add(jogo);
     }
 
@@ -20,8 +20,8 @@ public class Biblioteca {
         }
 
         System.out.println("===== Jogos na Biblioteca =====");
-        for (Jogo jogo : jogos) {
-            System.out.println(jogo);
+        for (ListaJogo j : jogos) {
+            System.out.println(j);
             System.out.println("----------------------------------");
         }
     }

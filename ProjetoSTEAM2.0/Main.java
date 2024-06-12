@@ -91,20 +91,8 @@ public class Main {
         System.out.print("Digite seu email: ");
         String emailUsuario = scan.nextLine();
 
-        System.out.print("Digite seu cpf: ");
-        String cpf = scan.nextLine();
-
-        while(cpf.length() != 11){
-            System.out.println("Informe um cpf valido! ");
-            cpf = scan.nextLine();
-        }
-
         System.out.print("Digite a senha do usuário: ");
         String senhaUsuario = scan.nextLine();
-
-        int id = 0;
-
-        id++;
 
         perfis.add(new CadastroUsuario(new Perfil(nomeUsuario, emailUsuario), senhaUsuario, perfis));
         System.out.println("Perfil criado com sucesso!");
