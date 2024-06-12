@@ -7,7 +7,9 @@ public class Main {
     private static CadastroUsuario perfilLogado = null;
 
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
+
+        Scanner scan = new Scanner(System.in); 
+        // Listas
         Comunidade comunidade = new Comunidade();
         Biblioteca biblioteca = new Biblioteca();
         Loja loja = new Loja();
@@ -104,7 +106,7 @@ public class Main {
 
         id++;
 
-        perfis.add(new CadastroUsuario(new Perfil(id, nomeUsuario, emailUsuario, cpf), senhaUsuario, perfis));
+        perfis.add(new CadastroUsuario(new Perfil(nomeUsuario, emailUsuario), senhaUsuario, perfis));
         System.out.println("Perfil criado com sucesso!");
     }
 
