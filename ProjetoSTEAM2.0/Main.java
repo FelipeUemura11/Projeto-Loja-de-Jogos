@@ -3,134 +3,163 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    private static List<CadastroUsuario> perfis = new ArrayList<>();
-    private static CadastroUsuario perfilLogado = null;
 
+    public static void criarPerfil(Scanner scan, List<Cadastro> pessoa) {
+
+        System.out.print("Digite seu nick-name: ");
+        String nome = scan.nextLine();
+
+        Perfil novoperfil = new Perfil(nome);
+        
+        System.out.print("Digite seu email: ");
+        String email = scan.nextLine();
+
+        System.out.print("Digite a senha do usuário: ");
+        String senha_teste = scan.nextLine();
+
+        boolean verificarSenha = false;
+        String senha = "";
+
+        while(!verificarSenha){
+
+            System.out.print("Digite novamente sua senha: ");
+            senha = scan.nextLine();
+
+            if(!senha_teste.equals(senha)){
+                System.out.println("Senhas diferentes!");
+            }else{
+                verificarSenha = true;
+                break;
+            }
+        }
+
+        pessoa.add(new Cadastro(email, senha, novoperfil));
+        System.out.println(" >> Perfil criado com sucesso! << ");
+    }
+
+    public static void fazerLogin(Scanner scan, List<Cadastro> pessoa){
+
+        // otimizacao do codigo - 'Cadastro pessoaSeleciona' vai receber a variavel 'pessoas' que estiver encontrada na lista Cadastro
+        // essa variavel vai ser reutilizada para verificar a senha e imprimir o nome da pessoa que esta logando!
+
+        Cadastro pessoaSelecionada = null;
+        String email = "";
+        boolean emailVerificado = false;
+
+        while(!emailVerificado){
+            System.out.print(" >> Digite seu email: ");
+            email = scan.nextLine();
+
+            for(Cadastro pessoas : pessoa){
+                if(!pessoas.getEmail().equals(email)){
+                    System.out.print("Email nao encontrado, digite novamente: ");
+                    break;
+                }else{
+                    emailVerificado = true;
+                    pessoaSelecionada = pessoas;
+                    break;
+                }
+            }
+        }
+
+        String senha = "";
+        boolean senhaVerificado = false;
+
+        while(!senhaVerificado){
+            System.out.print(" >> Digite sua senha: ");
+
+            while(!pessoaSelecionada.getSenha().equals((senha = scan.nextLine()))){
+                System.out.print("Senha Incorreta, digite novamente: ");
+            }
+            senhaVerificado = true;
+            break;
+        }
+
+        if(emailVerificado && senhaVerificado){
+            System.out.println(" >> Login realizado com sucesso como " + pessoaSelecionada.getPerfil().getNome() + "! << ");
+        }
+
+        int opc = 0;
+
+        do{
+            System.out.println("\n-=-=-=-=> Menu <=-=-=-=-\n");
+            System.out.println(" >    1. Perfil      < ");
+            System.out.println(" >    2. Biblioteca  < ");
+            System.out.println(" >    3. Loja        < ");
+            System.out.println(" >    4. Noticias    < ");
+            System.out.println(" >    5. Comunidade  < ");
+            System.out.println();
+            
+            System.out.print("Escolha uma opcao: ");
+            opc = scan.nextInt();
+
+            switch(opc){
+                case 1:
+                    // Perfil
+                    // Detalhes da conta
+                    break;
+                case 2:
+                    // Biblioteca
+                    // Lista de jogos, Favoritos
+                    break;
+                case 3:
+                    // Loja
+                    // Jogos(categorias), Ofertas, Carrinho
+                    break;
+                case 4:
+                    // Noticias
+                    // Catalogo, Noticias os jogos
+                    break;
+                case 5:
+                    // Comunidade
+                    // Discussoes, Oficina, Transmissoes
+                    break;
+                case 6:
+                    break;
+                default:
+                    System.out.println("Opcao invalida! Tente novamente.");
+            }
+
+        }while(opc != 6);
+        
+    }
+    
     public static void main(String[] args) {
+        
+        List<Cadastro> pessoa = new ArrayList<>();
 
         Scanner scan = new Scanner(System.in); 
-        // Listas
-        Comunidade comunidade = new Comunidade();
-        Biblioteca biblioteca = new Biblioteca();
-        Loja loja = new Loja();
+
         int opcao = 0;
 
-        while (true) {
-            System.out.println("\n===== Menu Principal =====");
-            System.out.println("[1] Login");
-            System.out.println("[2] Comunidade");
-            System.out.println("[3] Biblioteca");
-            System.out.println("[4] Loja");
-            System.out.println("[4] Arquivo");
-            System.out.println("[6] Sair");
-            System.out.print("Escolha uma opção: ");
+        do{
+            System.out.println("\n >>>>>>>>>>>>> Login <<<<<<<<<<<<< \n");
+            System.out.println("      >>  [1] Nova Conta  <<");
+            System.out.println("      >>  [2] Fazer Login <<");
+            System.out.println("      >>  [3] Sair        <<");
+            System.out.println();
+            System.out.print("Escolha uma opcao: ");
 
             opcao = scan.nextInt();
             scan.nextLine(); // Limpar buffer
 
             switch (opcao) {
                 case 1:
-                    int opc = 0;
-
-                    System.out.println("[1] Nova Conta");
-                    System.out.println("[2] Fazer Login");
-                    System.out.println("[3] Voltar ao Menu");
-
-                    System.out.print("Escolha uma opcao: ");
-                    opc = scan.nextInt();
-                    scan.nextLine();
-
-                    if(opc == 1){
-                        criarPerfil(scan);
-                    }else if(opc == 2){
-                        fazerLogin(scan);
-                    }else{
-                        break;
-                    }
-
+                    criarPerfil(scan, pessoa);
                     break;
                 case 2:
-                    if (perfilLogado != null) {
-                        comunidade.gerenciarComunidade(scan);
-                    } else {
-                        System.out.println("Faça login primeiro!");
-                    }
+                    fazerLogin(scan, pessoa);
                     break;
                 case 3:
-                    if (perfilLogado != null) {
-                        biblioteca.gerenciarBiblioteca(scan);
-                    } else {
-                        System.out.println("Faça login primeiro!");
-                    }
                     break;
-                case 4:
-                    if (perfilLogado != null) {
-                        loja.gerenciarLoja(scan);
-                    } else {
-                        System.out.println("Faça login primeiro!");
-                    }
-                    break;
-                case 5:
-                    // Implementação do menu do arquivo
-                    break;
-                case 6:
-                    System.out.println("Saindo...");
-                    scan.close();
-                    return;
                 default:
                     System.out.println("Opção inválida! Tente novamente.");
             }
-        }
+        }while(opcao != 3);
+        
+        System.out.println("Saindo do pragrama...");
     }
 
-    private static void criarPerfil(Scanner scan) {
-
-        System.out.print("Digite seu nome: ");
-        String nomeUsuario = scan.nextLine();
-
-        System.out.print("Digite seu email: ");
-        String emailUsuario = scan.nextLine();
-
-        System.out.print("Digite a senha do usuário: ");
-        String senhaUsuario = scan.nextLine();
-
-        perfis.add(new CadastroUsuario(new Perfil(nomeUsuario, emailUsuario), senhaUsuario, perfis));
-        System.out.println("Perfil criado com sucesso!");
-    }
-
-    private static void fazerLogin(Scanner scan){
-
-        System.out.print("Digite o email: ");
-        String email = scan.nextLine();
-
-        boolean verificado = false;
-
-        for(CadastroUsuario perfil : perfis){
-            while(!perfil.getPerfil().getEmail().equals(email)){
-                System.out.print("Email nao encontrado, digite novamente: ");
-                email = scan.nextLine();
-            }
-        }
-
-        System.out.print("Digite a senha: ");
-        String senha = scan.nextLine();
-
-        for (CadastroUsuario perfil : perfis) {
-            while(!perfil.getSenha().equals(senha)){
-                System.out.print("Senha incorreta, tente novamente: ");
-                senha = scan.nextLine();
-            }
-            verificado = true;
-
-            perfilLogado = perfil;
-            System.out.println("Login realizado com sucesso como " + perfilLogado.getPerfil().getNome() + "!");
-            perfilLogado.gerenciarCadastro(); // Direcionar para o menu do cadastro
-            break;
-        }
-        if(!verificado){
-            System.out.println("Erro : email ou senha incorretos");
-        }
-    }
 }
 
 

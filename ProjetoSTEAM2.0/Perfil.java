@@ -1,10 +1,17 @@
-class Perfil {
-    private String nome;
-    private String email;
+import java.util.ArrayList;
+import java.util.List;
 
-    public Perfil(String nome, String email) {
+public class Perfil {
+    protected String nome;
+    protected List<Amigo> amigos;
+    protected List<Grupo> grupos;
+    protected List<Conquista> conquistas;
+
+    Perfil(String nome) {
         this.nome = nome;
-        this.email = email;
+        this.amigos = new ArrayList<>();
+        this.grupos = new ArrayList<>();
+        this.conquistas = new ArrayList<>();
     }
 
     public String getNome() {
@@ -15,11 +22,4 @@ class Perfil {
         this.nome = nome;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 }
