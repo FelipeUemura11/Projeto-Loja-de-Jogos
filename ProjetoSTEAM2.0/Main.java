@@ -96,8 +96,7 @@ public class Main {
 
             switch(opc){
                 case 1:
-                    // Perfil
-                    // Detalhes da conta
+                    perfilCadastro(scan, pessoa);
                     break;
                 case 2:
                     // Biblioteca
@@ -123,6 +122,47 @@ public class Main {
 
         }while(opc != 6);
         
+    }
+
+    public static void perfilCadastro(Scanner scan, List<Cadastro> pessoa){
+
+        int opc = 0;
+
+        do{
+            System.out.println("\n-=-=-=-=> Perfil <=-=-=-=-\n");
+            System.out.println(" >  1. Detalhes da Conta  < ");
+            System.out.println(" >  2. Minha Carteira R$  < ");
+            System.out.println(" >  3. Lista de Amigos    < ");
+            System.out.println(" >  4. Lista de Grupos    < ");
+            System.out.println(" >  5. Lista de Desejos   < ");
+            System.out.println(" >  6. Deletar Conta      < ");
+            System.out.println(" >  7. Voltar ao Menu     < ");
+            System.out.println();
+            
+            System.out.print("Escolha uma opcao: ");
+            opc = scan.nextInt();
+
+            switch(opc){
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3: 
+                    break; 
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+                default:
+                    System.out.println("---------------------------------------");
+                    System.out.println(" >> Opcao Invalida! Tente novamente << ");
+            }
+
+       }while(opc != 5);
     }
     
     public static void main(String[] args) {
