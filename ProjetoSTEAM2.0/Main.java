@@ -96,7 +96,7 @@ public class Main {
 
             switch(opc){
                 case 1:
-                    perfilCadastro(scan, pessoa);
+                    menuPerfil(scan, pessoaSelecionada);
                     break;
                 case 2:
                     // Biblioteca
@@ -124,7 +124,7 @@ public class Main {
         
     }
 
-    public static void perfilCadastro(Scanner scan, List<Cadastro> pessoa){
+    public static void menuPerfil(Scanner scan, Cadastro pessoaSelecionada){
 
         int opc = 0;
 
@@ -144,6 +144,7 @@ public class Main {
 
             switch(opc){
                 case 1:
+                    
                     break;
                 case 2:
                     break;
