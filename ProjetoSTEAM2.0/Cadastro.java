@@ -29,16 +29,4 @@ public class Cadastro{
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
-    public void setPerfil(Perfil perfil){
-        this.perfil = perfil;
-    }    
 }

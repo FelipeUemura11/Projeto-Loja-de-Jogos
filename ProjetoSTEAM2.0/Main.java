@@ -93,13 +93,14 @@ public class Main {
             
             System.out.print("Escolha uma opcao: ");
             opc = scan.nextInt();
+            scan.nextLine();
 
             switch(opc){
                 case 1:
 
                 int opcao = 0;
 
-                do{
+                while(opcao != 7){
                     System.out.println("\n-=-=-=-=> Perfil <=-=-=-=-\n");
                     System.out.println(" >  1. Detalhes da Conta  < ");
                     System.out.println(" >  2. Minha Carteira     < ");
@@ -112,9 +113,10 @@ public class Main {
                     
                     System.out.print("Escolha uma opcao: ");
                     opcao = scan.nextInt();
+                    scan.nextLine();
         
                     switch(opcao){
-                        case 1:
+                        case 1: // DETALHES DA CONTA
                             System.out.println("-----------------------------");
                             System.out.println(" >> Nome: "+pessoaSelecionada.getPerfil().getNome());
                             System.out.println(" >> Email: "+pessoaSelecionada.getEmail());
@@ -122,7 +124,7 @@ public class Main {
                             System.out.println(" >> Saldo: "+pessoaSelecionada.getSaldo());
                             System.out.println("-----------------------------");
                             break;
-                        case 2:
+                        case 2: // MINHA CARTEIRA
                             System.out.println("-----------------------------");
                             System.out.println(" >> Seu saldo: R$"+pessoaSelecionada.getSaldo());
                             System.out.print(" >> Deseje adicionar dinheiro? sim(1) / nao(2): ");
@@ -141,7 +143,7 @@ public class Main {
                                 break;
                             }
                             break;
-                        case 3:
+                        case 3: // AMIGOS
 
                             int escolha = 0;
                             boolean encontrado = false;
@@ -155,7 +157,7 @@ public class Main {
                             System.out.println(" > 5. Voltar ao perfil      < ");
                             System.out.println();
 
-                            System.out.println("Escolha uma opcao: ");
+                            System.out.print("Escolha uma opcao: ");
                             escolha = scan.nextInt();
                             scan.nextLine();
 
@@ -180,13 +182,13 @@ public class Main {
                                 System.out.println(" >> REMOVER <<");
                                 System.out.println("Informe o nome do amigo: ");
                                 nome_amigo = scan.nextLine();
-                                
+                                /* 
                                 if(pessoaSelecionada.getPerfil().amigos.getNomeAmigo().equals(nome_amigo)){
-                                    System.out.println("Amigo Removido! -> "+pessoaSelecionada.getPerfil().getNome());
-                                    pessoaSelecionada.getPerfil().amigos.getNomeAmigo().remove();
+                                  System.out.println("Amigo Removido! -> "+pessoaSelecionada.getPerfil().getNome());
+                                  pessoaSelecionada.getPerfil().amigos.getNomeAmigo().remove();
                                 }else{
                                     System.out.println("Amigo nao encontrado!");
-                                }
+                                } */
                                 
                             }else if(escolha == 3){
                                     // LISTA DE AMIGOS
@@ -196,22 +198,22 @@ public class Main {
                                 break;
                             }
                             break; 
-                        case 4:
-                            
+                        case 4: // GRUPOS
                             break;
-                        case 5:
+                        case 5: // DESEJOS
                             break;
-                        case 6:
+                        case 6: //  DELETAR CONTA
                             break;
-                        case 7:
+                        case 7: // VOLTAR AO MENU
                             break;
                         default:
                             System.out.println("---------------------------------------");
                             System.out.println(" >> Opcao Invalida! Tente novamente << ");
                     }
         
-               }while(opc != 7);
+               };
                     break;
+
                 case 2:
                     // Biblioteca
                     // Lista de jogos, Favoritos
