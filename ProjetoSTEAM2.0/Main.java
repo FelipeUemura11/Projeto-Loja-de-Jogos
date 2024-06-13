@@ -88,6 +88,7 @@ public class Main {
             System.out.println(" >    3. Loja        < ");
             System.out.println(" >    4. Noticias    < ");
             System.out.println(" >    5. Comunidade  < ");
+            System.out.println(" >    6. Sair        < ");
             System.out.println();
             
             System.out.print("Escolha uma opcao: ");
