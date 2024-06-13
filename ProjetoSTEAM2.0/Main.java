@@ -6,7 +6,7 @@ public class Main {
 
     public static void criarPerfil(Scanner scan, List<Cadastro> pessoa) {
 
-        System.out.print("Digite seu nick-name: ");
+        System.out.print("Digite seu nome: ");
         String nome = scan.nextLine();
 
         Perfil novoperfil = new Perfil(nome);
@@ -14,7 +14,7 @@ public class Main {
         System.out.print("Digite seu email: ");
         String email = scan.nextLine();
 
-        System.out.print("Digite a senha do usuário: ");
+        System.out.print("Digite sua senha: ");
         String senha_teste = scan.nextLine();
 
         boolean verificarSenha = false;
@@ -33,8 +33,8 @@ public class Main {
             }
         }
 
-        pessoa.add(new Cadastro(email, senha, novoperfil));
-        System.out.println(" >> Perfil criado com sucesso! << ");
+        pessoa.add(new Cadastro(email, senha, novoperfil, 0.0));
+        System.out.println("\n >> Perfil criado com sucesso! << ");
     }
 
     public static void fazerLogin(Scanner scan, List<Cadastro> pessoa){
@@ -52,11 +52,11 @@ public class Main {
 
             for(Cadastro pessoas : pessoa){
                 if(!pessoas.getEmail().equals(email)){
-                    System.out.print("Email nao encontrado, digite novamente: ");
+                    System.out.print("Email nao encontrado...\n");
                     break;
                 }else{
                     emailVerificado = true;
-                    pessoaSelecionada = pessoas;
+                    pessoaSelecionada = pessoas; // armazena a pessoa certa na variavel pessoaSelecionada
                     break;
                 }
             }
@@ -96,7 +96,67 @@ public class Main {
 
             switch(opc){
                 case 1:
-                    menuPerfil(scan, pessoaSelecionada);
+
+                int opcao = 0;
+
+                do{
+                    System.out.println("\n-=-=-=-=> Perfil <=-=-=-=-\n");
+                    System.out.println(" >  1. Detalhes da Conta  < ");
+                    System.out.println(" >  2. Minha Carteira R$  < ");
+                    System.out.println(" >  3. Lista de Amigos    < ");
+                    System.out.println(" >  4. Lista de Grupos    < ");
+                    System.out.println(" >  5. Lista de Desejos   < ");
+                    System.out.println(" >  6. Deletar Conta      < ");
+                    System.out.println(" >  7. Voltar ao Menu     < ");
+                    System.out.println();
+                    
+                    System.out.print("Escolha uma opcao: ");
+                    opcao = scan.nextInt();
+        
+                    switch(opcao){
+                        case 1:
+                            System.out.println("-----------------------------");
+                            System.out.println(" >> Nome: "+pessoaSelecionada.getPerfil().getNome());
+                            System.out.println(" >> Email: "+pessoaSelecionada.getEmail());
+                            System.out.println(" >> Senha: "+pessoaSelecionada.getSenha());
+                            System.out.println(" >> Saldo: "+pessoaSelecionada.getSaldo());
+                            System.out.println("-----------------------------");
+                            break;
+                        case 2:
+                            System.out.println("-----------------------------");
+                            System.out.println(" >> Seu saldo: "+pessoaSelecionada.getSaldo());
+                            System.out.print(" >> Deseje adicionar dinheiro? sim(1) / nao(2): ");
+                            int sim_nao = scan.nextInt();
+
+                            if(sim_nao == 1){
+                                System.out.print("Informe a quantidade a ser adicionada: ");
+                                double saldo_adicional = scan.nextDouble();
+
+                                pessoaSelecionada.setSaldo(pessoaSelecionada.getSaldo() + saldo_adicional);
+
+                                System.out.println(" >> Saldo Atualizado! Saldo atual: "+ pessoaSelecionada.getSaldo());
+                                System.out.println("-----------------------------");
+                            
+                            }else{
+                                break;
+                            }
+                            break;
+                        case 3: 
+                            break; 
+                        case 4:
+                            break;
+                        case 5:
+                            break;
+                        case 6:
+                            break;
+                        case 7:
+                            break;
+                        default:
+                            System.out.println("---------------------------------------");
+                            System.out.println(" >> Opcao Invalida! Tente novamente << ");
+                    }
+        
+               }while(opc != 7);
                     break;
                 case 2:
                     // Biblioteca
@@ -117,55 +177,13 @@ public class Main {
                 case 6:
                     break;
                 default:
-                    System.out.println("Opcao invalida! Tente novamente.");
+                    System.out.println("---------------------------------------");
+                    System.out.println(" >> Opcao Invalida! Tente novamente << ");
             }
 
         }while(opc != 6);
         
     }
-
-    public static void menuPerfil(Scanner scan, Cadastro pessoaSelecionada){
-
-        int opc = 0;
-
-        do{
-            System.out.println("\n-=-=-=-=> Perfil <=-=-=-=-\n");
-            System.out.println(" >  1. Detalhes da Conta  < ");
-            System.out.println(" >  2. Minha Carteira R$  < ");
-            System.out.println(" >  3. Lista de Amigos    < ");
-            System.out.println(" >  4. Lista de Grupos    < ");
-            System.out.println(" >  5. Lista de Desejos   < ");
-            System.out.println(" >  6. Deletar Conta      < ");
-            System.out.println(" >  7. Voltar ao Menu     < ");
-            System.out.println();
-            
-            System.out.print("Escolha uma opcao: ");
-            opc = scan.nextInt();
-
-            switch(opc){
-                case 1:
-                    
-                    break;
-                case 2:
-                    break;
-                case 3: 
-                    break; 
-                case 4:
-                    break;
-                case 5:
-                    break;
-                case 6:
-                    break;
-                case 7:
-                    break;
-                default:
-                    System.out.println("---------------------------------------");
-                    System.out.println(" >> Opcao Invalida! Tente novamente << ");
-            }
-
-       }while(opc != 5);
-    }
-    
     public static void main(String[] args) {
         
         List<Cadastro> pessoa = new ArrayList<>();
@@ -195,7 +213,8 @@ public class Main {
                 case 3:
                     break;
                 default:
-                    System.out.println("Opção inválida! Tente novamente.");
+                    System.out.println("---------------------------------------");
+                    System.out.println(" >> Opcao Invalida! Tente novamente << ");
             }
         }while(opcao != 3);
         

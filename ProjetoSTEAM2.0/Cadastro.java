@@ -1,12 +1,14 @@
-public class Cadastro {
+public class Cadastro{
     protected String email;
     protected String senha;
     protected Perfil perfil;
+    protected double saldo;
 
-    Cadastro (String email, String senha, Perfil perfil) {
+    Cadastro (String email, String senha, Perfil perfil, double saldo) {
         this.email = email;
         this.senha = senha;
         this.perfil = perfil;
+        this.saldo = saldo;
     }
 
     public String getEmail() {
@@ -20,6 +22,13 @@ public class Cadastro {
     public Perfil getPerfil(){
         return perfil;
     }
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
 
     public void setEmail(String email) {
         this.email = email;
@@ -32,5 +41,14 @@ public class Cadastro {
     public void setPerfil(Perfil perfil){
         this.perfil = perfil;
     }
+
+    @Override
+    public String toString() {
+        return "Cadastro [email=" + email + ", senha=" + senha;
+    }
+
+    
+    
+    
     
 }
