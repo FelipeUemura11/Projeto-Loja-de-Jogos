@@ -1,15 +1,11 @@
-class Amigo {
-    private String nome;
+public class Amigo {
+    private String nome_amigo;
 
-    Amigo(String nome) {
-        this.nome = nome;
+    Amigo(String nome_amigo) {
+        this.nome_amigo = nome_amigo;
     }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
+    public String getNomeAmigo() {
+        return nome_amigo;
     }
 }

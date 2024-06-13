@@ -40,15 +40,5 @@ public class Cadastro{
 
     public void setPerfil(Perfil perfil){
         this.perfil = perfil;
-    }
-
-    @Override
-    public String toString() {
-        return "Cadastro [email=" + email + ", senha=" + senha;
-    }
-
-    
-    
-    
-    
+    }    
 }
