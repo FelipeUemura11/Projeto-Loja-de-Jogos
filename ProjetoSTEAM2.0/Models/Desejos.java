@@ -1,3 +1,5 @@
+package Models;
+
 public class Desejos {
     private String nome;
 

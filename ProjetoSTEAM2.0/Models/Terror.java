@@ -1,3 +1,5 @@
+package Models;
+
 public class Terror extends Categoria{
 
     public Terror(){

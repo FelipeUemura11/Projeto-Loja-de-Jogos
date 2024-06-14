@@ -1,3 +1,5 @@
+package Models;
+
 public class ListaJogo {
     private String titulo;
     private double preco;

@@ -1,4 +1,6 @@
-class Grupo {
+package Models;
+
+public class Grupo {
     private String nome;
 
     Grupo(String nome) {
