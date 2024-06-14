@@ -8,4 +8,5 @@ public class Amigo {
     public String getNomeAmigo() {
         return nome_amigo;
     }
+
 }

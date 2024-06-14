@@ -37,12 +37,9 @@ public class Main {
         System.out.println("\n >> Perfil criado com sucesso! << ");
     }
 
-    public static void fazerLogin(Scanner scan, List<Cadastro> pessoa){
+    public static void fazerLogin(Scanner scan, List<Cadastro> pessoa){!
 
-        // otimizacao do codigo - 'Cadastro pessoaSeleciona' vai receber a variavel 'pessoas' que estiver encontrada na lista Cadastro
-        // essa variavel vai ser reutilizada para verificar a senha e imprimir o nome da pessoa que esta logando!
-
-        Cadastro pessoaSelecionada = null;
+        Cadastro pessoa_selecionada = null;
         String email = "";
         boolean emailVerificado = false;
 
@@ -56,7 +53,7 @@ public class Main {
                     break;
                 }else{
                     emailVerificado = true;
-                    pessoaSelecionada = pessoas; // armazena a pessoa certa na variavel pessoaSelecionada
+                    pessoa_selecionada = pessoas; // armazena a pessoa certa na variavel pessoa_selecionada
                     break;
                 }
             }
@@ -68,7 +65,7 @@ public class Main {
         while(!senhaVerificado){
             System.out.print(" >> Digite sua senha: ");
 
-            while(!pessoaSelecionada.getSenha().equals((senha = scan.nextLine()))){
+            while(!pessoa_selecionada.getSenha().equals((senha = scan.nextLine()))){
                 System.out.print("Senha Incorreta, digite novamente: ");
             }
             senhaVerificado = true;
@@ -76,7 +73,7 @@ public class Main {
         }
 
         if(emailVerificado && senhaVerificado){
-            System.out.println(" >> Login realizado com sucesso como " + pessoaSelecionada.getPerfil().getNome() + "! << ");
+            System.out.println(" >> Login realizado com sucesso como " + pessoa_selecionada.getPerfil().getNome() + "! << ");
         }
 
         int opc = 0;
@@ -118,15 +115,15 @@ public class Main {
                     switch(opcao){
                         case 1: // DETALHES DA CONTA
                             System.out.println("-----------------------------");
-                            System.out.println(" >> Nome: "+pessoaSelecionada.getPerfil().getNome());
-                            System.out.println(" >> Email: "+pessoaSelecionada.getEmail());
-                            System.out.println(" >> Senha: "+pessoaSelecionada.getSenha());
-                            System.out.println(" >> Saldo: "+pessoaSelecionada.getSaldo());
+                            System.out.println(" >> Nome: "+pessoa_selecionada.getPerfil().getNome());
+                            System.out.println(" >> Email: "+pessoa_selecionada.getEmail());
+                            System.out.println(" >> Senha: "+pessoa_selecionada.getSenha());
+                            System.out.println(" >> Saldo: "+pessoa_selecionada.getSaldo());
                             System.out.println("-----------------------------");
                             break;
                         case 2: // MINHA CARTEIRA
                             System.out.println("-----------------------------");
-                            System.out.println(" >> Seu saldo: R$"+pessoaSelecionada.getSaldo());
+                            System.out.println(" >> Seu saldo: R$"+pessoa_selecionada.getSaldo());
                             System.out.print(" >> Deseje adicionar dinheiro? sim(1) / nao(2): ");
                             int sim_nao = scan.nextInt();
 
@@ -134,9 +131,9 @@ public class Main {
                                 System.out.print(" >> Informe a quantidade a ser adicionada: ");
                                 double saldo_adicional = scan.nextDouble();
 
-                                pessoaSelecionada.setSaldo(pessoaSelecionada.getSaldo() + saldo_adicional);
+                                pessoa_selecionada.setSaldo(pessoa_selecionada.getSaldo() + saldo_adicional);
 
-                                System.out.println(" >> Saldo Atualizado! Saldo atual: R$"+ pessoaSelecionada.getSaldo());
+                                System.out.println(" >> Saldo Atualizado! Saldo atual: R$"+ pessoa_selecionada.getSaldo());
                                 System.out.println("-----------------------------");
                             
                             }else{
@@ -169,7 +166,7 @@ public class Main {
                                 for(Cadastro pessoas : pessoa){
                                     if(pessoas.getPerfil().getNome().equals(nome_amigo)){
                                         System.out.println("Novo amigo adicionado! -> "+pessoas.getPerfil().getNome());
-                                        pessoaSelecionada.getPerfil().amigos.add(new Amigo(pessoas.getPerfil().getNome()));
+                                        pessoa_selecionada.getPerfil().amigos.add(new Amigo(pessoas.getPerfil().getNome()));
                                         encontrado = true;
                                         break;
                                     }
@@ -182,13 +179,13 @@ public class Main {
                                 System.out.println(" >> REMOVER <<");
                                 System.out.println("Informe o nome do amigo: ");
                                 nome_amigo = scan.nextLine();
-                                /* 
-                                if(pessoaSelecionada.getPerfil().amigos.getNomeAmigo().equals(nome_amigo)){
-                                  System.out.println("Amigo Removido! -> "+pessoaSelecionada.getPerfil().getNome());
-                                  pessoaSelecionada.getPerfil().amigos.getNomeAmigo().remove();
+                                
+                                if(pessoa_selecionada.getPerfil().buscarAmigo(nome_amigo) == null){
+                                    System.out.println("ERRO : Amigo nao encontrado!");
                                 }else{
-                                    System.out.println("Amigo nao encontrado!");
-                                } */
+                                    System.out.println("Amigo Removido! -> "+pessoa_selecionada.getPerfil().buscarAmigo(nome_amigo));
+                                    pessoa_selecionada.getPerfil().removerAmigo(nome_amigo);
+                                }
                                 
                             }else if(escolha == 3){
                                     // LISTA DE AMIGOS
