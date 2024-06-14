@@ -32,7 +32,7 @@ public class Menu {
             senha = scan.nextLine();
 
             if(!senha_teste.equals(senha)){
-                System.out.println("Senhas diferentes!");
+                System.out.println("Senhas diferentes...");
             }else{
                 verificarSenha = true;
                 break;
@@ -55,7 +55,6 @@ public class Menu {
             for(Cadastro pessoas : pessoa){
                 if(!pessoas.getEmail().equals(email)){
                     System.out.print("Email nao encontrado...\n");
-                    break;
                 }else{
                     emailVerificado = true;
                     pessoa_selecionada = pessoas; // armazena a pessoa certa na variavel pessoa_selecionada
@@ -64,22 +63,27 @@ public class Menu {
             }
         }
 
-        String senha = "";
         boolean senhaVerificado = false;
-
+        String senha = "";
+        
+        
         while(!senhaVerificado){
-            System.out.print(" >> Digite sua senha: ");
 
-            while(!pessoa_selecionada.getSenha().equals((senha = scan.nextLine()))){
-                System.out.print("Senha Incorreta, digite novamente: ");
+            System.out.print("Digite novamente sua senha: ");
+            senha = scan.nextLine();
+
+            if(!pessoa_selecionada.getSenha().equals(senha)){
+                System.out.println("Senhas diferentes...");
+            }else{
+                senhaVerificado = true;
+                break;
             }
-            senhaVerificado = true;
-            break;
         }
 
         if(emailVerificado && senhaVerificado){
-            System.out.println(" >> Login realizado com sucesso como " + pessoa_selecionada.getPerfil().getNome() + "! << ");
+            System.out.println("\n >> Login realizado com sucesso como " + pessoa_selecionada.getPerfil().getNome() + "! << ");
         }
+        
 
         int opc = -1;
 
