@@ -1,10 +1,10 @@
-import Views.Menu;
+import Views.Login;
 
 public class Main {
 
     public static void main(String[] args) {
-        Menu menu = new Menu();
-        menu.inicio();
+        Login login = new Login();
+        login.inicio();
     }
 
 }

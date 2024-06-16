@@ -6,7 +6,7 @@ import java.util.List;
 
 import Models.Cadastro;
 
-public class Menu {
+public class Login {
 
     public void inicio(){
         
@@ -36,7 +36,6 @@ public class Menu {
                     break;
                 case 2:
                     fazer_login.funcaoFazerLogin(pessoa);
-                    //fazerLogin(scan, pessoa);
                     break;
                 case 0:
                     break;
@@ -46,9 +45,9 @@ public class Menu {
                 }
         }while(opcao != 0);
         
-        scan.close();
-        
         System.out.println("Saindo do pragrama...");
+        
+        scan.close();
     }
 }
     
