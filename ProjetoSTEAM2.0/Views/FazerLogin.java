@@ -3,8 +3,8 @@ package Views;
 import java.util.Scanner;
 import java.util.List;
 
-import Models.Amigo;
 import Models.Cadastro;
+import Models.Amigo;
 
 public class FazerLogin {
 
@@ -50,7 +50,7 @@ public class FazerLogin {
             }
 
             if(!senhaVerificado){
-                System.out.println("Senha nao encontrado...");
+                System.out.println("Senha incorreta...");
             }
         }
 
@@ -96,11 +96,14 @@ public class FazerLogin {
         
                     switch(opcao){
                         case 1: // DETALHES DA CONTA
-                            System.out.println("-----------------------------");
+                            System.out.println("\n-----------------------------");
+                            System.out.println(pessoa_selecionada.toString());
+                            /*
                             System.out.println(" >> Nome: "+pessoa_selecionada.getPerfil().getNome());
                             System.out.println(" >> Email: "+pessoa_selecionada.getEmail());
                             System.out.println(" >> Senha: "+pessoa_selecionada.getSenha());
                             System.out.println(" >> Saldo: "+pessoa_selecionada.getSaldo());
+                            */
                             System.out.println("-----------------------------");
                             break;
                         case 2: // MINHA CARTEIRA
@@ -147,7 +150,7 @@ public class FazerLogin {
 
                                 for(Cadastro pessoas : pessoa){
                                     if(pessoas.getPerfil().getNome().equals(nome_amigo)){
-                                        System.out.println("Novo amigo adicionado! -> "+pessoas.getPerfil().getNome());
+                                        System.out.println("\nNovo amigo adicionado! -> "+pessoas.getPerfil().getNome());
                                         pessoa_selecionada.getPerfil().amigos.add(new Amigo(pessoas.getPerfil().getNome()));
                                         encontrado = true;
                                         break;
