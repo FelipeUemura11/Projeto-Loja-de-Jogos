@@ -6,7 +6,7 @@ import java.util.List;
 public class Perfil{
 
     protected String nome;
-    public List<Amigo> amigos;
+    public List<Amigo> amigos; 
     protected List<Grupo> grupos;
     protected List<Conquista> conquistas;
     protected List<Desejos> desejos;
