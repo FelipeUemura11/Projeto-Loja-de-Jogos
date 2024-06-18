@@ -22,7 +22,8 @@ public class Perfil{
     public String getNome() {
         return nome;
     }
-    public List<Amigo> getAmigos() {
+
+    public List<Amigo> getAmigo(){
         return amigos;
     }
 
@@ -40,6 +41,15 @@ public class Perfil{
             System.out.println("Amigo nao econtrado!");
         }
         
+        return null;
+    }
+
+    public Amigo listarAmigos(){
+        int i = 0;
+        for(Amigo amigo : amigos){
+            i++;
+            System.out.println("Amigo ("+ i +"): "+amigo.getNomeAmigo());
+        }
         return null;
     }
 }
