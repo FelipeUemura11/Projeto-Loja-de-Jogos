@@ -1,6 +1,9 @@
 package Views;
 
 import java.util.Scanner;
+
+import Controller.GrupoController;
+
 import java.util.List;
 
 import Models.Amigo;
@@ -191,6 +194,39 @@ public class FazerLogin {
                             }
                             break; 
                         case 4: // GRUPOS
+
+                            int op = -1;
+                            GrupoController grupos = new GrupoController();
+
+                            grupos.preGrupos(); // Grupos existentes
+                            grupos.preMembros(); // Membros existentes
+
+                            System.out.println("\n-=-=-=-=> Grupos <=-=-=-=-\n");
+                            System.out.println(" > 1. Entrar em um grupo    < ");
+                            System.out.println(" > 2. Sair de um grupo      < ");
+                            System.out.println(" > 3. Lista de grupos       < ");
+                            System.out.println(" > 4. buscar um grupo       < ");
+                            System.out.println(" > 0. Voltar ao perfil      < ");
+
+                            System.out.print("Escolha uma opcao: ");
+                            escolha = scan.nextInt();
+                            scan.nextLine();
+
+                            switch(op){
+                                case 1:
+                                    System.out.print("Informe o nome do grupo: ");
+                                    break;
+                                case 2:
+                                    break;
+                                case 3:
+                                    break;
+                                case 4:
+                                    break;
+                                default:
+                                    System.out.println("---------------------------------------");
+                                    System.out.println(" >> Opcao Invalida! Tente novamente << ");
+                                    break;
+                            }
                             break;
                         case 5: // DESEJOS
                             break;
@@ -201,6 +237,7 @@ public class FazerLogin {
                         default:
                             System.out.println("---------------------------------------");
                             System.out.println(" >> Opcao Invalida! Tente novamente << ");
+                            break;
                     }
                 };
                     break;
@@ -231,4 +268,5 @@ public class FazerLogin {
         }while(opc != 0);
 
     }
+
 }
