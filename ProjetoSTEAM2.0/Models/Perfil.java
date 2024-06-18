@@ -26,11 +26,11 @@ public class Perfil{
     public List<Amigo> getAmigo(){
         return amigos;
     }
-
+    // Funcao para buscar amigo na lista de amigos, retorna o nome do amigo
     public Amigo buscarAmigo(String nome_amigo){
         return amigos.stream().filter(Amigo -> nome_amigo.equals(Amigo.getNomeAmigo())).findFirst().orElse(null);
     }
-
+    // funcao para remover amigo da lista de amigos
     public Amigo removerAmigo(String nome_amigo){
 
         Amigo encontrado = buscarAmigo(nome_amigo);
@@ -43,7 +43,7 @@ public class Perfil{
         
         return null;
     }
-
+    // listar os amigos
     public Amigo listarAmigos(){
         int i = 0;
         for(Amigo amigo : amigos){
