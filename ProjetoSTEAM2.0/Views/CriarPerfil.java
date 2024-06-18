@@ -5,6 +5,7 @@ import java.util.List;
 
 import Controller.PerfilController;
 import Models.Cadastro;
+import Models.Grupo;
 import Models.Perfil;
 
 public class CriarPerfil {
@@ -13,11 +14,12 @@ public class CriarPerfil {
 
     public void funcaoCriarPerfil(List<Cadastro> pessoa){
         
+        Grupo grupo = new Grupo("Nenhum", "Nenhum", 0);
 
         System.out.print("Digite seu nome: ");
         String nome = scan.nextLine();
 
-        Perfil novo_perfil = new Perfil(nome);
+        Perfil novo_perfil = new Perfil(nome, grupo);
         
         System.out.print("Digite seu email: ");
         String email = scan.nextLine();

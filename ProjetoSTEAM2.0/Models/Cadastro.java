@@ -34,6 +34,6 @@ public class Cadastro{
 
     @Override
     public String toString() {
-        return "Nome: " + getPerfil().getNome() + "\nEmail: " + email + "\nSenha: " + senha + "\nSaldo: " + saldo;
+        return "Nome: " + getPerfil().getNome() + "\nEmail: " + email + "\nSenha: " + senha + "\nSaldo: " + saldo+ "\nGrupo: "+getPerfil().getGrupo().getNomeGrupo();
     }
 }

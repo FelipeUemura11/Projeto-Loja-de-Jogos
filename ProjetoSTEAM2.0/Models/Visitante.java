@@ -15,5 +15,4 @@ public class Visitante extends Membro{
     public void setTipo_visitante(String tipo_visitante) {
         this.tipo_visitante = tipo_visitante;
     }
-    
 }

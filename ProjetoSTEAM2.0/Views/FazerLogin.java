@@ -1,13 +1,12 @@
 package Views;
 
 import java.util.Scanner;
-
-import Controller.GrupoController;
-
+import java.util.ArrayList;
 import java.util.List;
 
 import Models.Amigo;
 import Models.Cadastro;
+import Models.Grupo;
 
 public class FazerLogin {
 
@@ -196,31 +195,32 @@ public class FazerLogin {
                         case 4: // GRUPOS
 
                             int op = -1;
-                            GrupoController grupos = new GrupoController();
+                            Grupo grupo = new Grupo("", "", 0);
+                            List<Grupo> grupos = new ArrayList<>();
 
-                            grupos.preGrupos(); // Grupos existentes
-                            grupos.preMembros(); // Membros existentes
+                            grupo.gruposExistentes(grupos);
 
                             System.out.println("\n-=-=-=-=> Grupos <=-=-=-=-\n");
                             System.out.println(" > 1. Entrar em um grupo    < ");
-                            System.out.println(" > 2. Sair de um grupo      < ");
-                            System.out.println(" > 3. Lista de grupos       < ");
-                            System.out.println(" > 4. buscar um grupo       < ");
+                            System.out.println(" > 2. Ver grupos            < ");
                             System.out.println(" > 0. Voltar ao perfil      < ");
 
                             System.out.print("Escolha uma opcao: ");
-                            escolha = scan.nextInt();
+                            op = scan.nextInt();
                             scan.nextLine();
 
                             switch(op){
                                 case 1:
+                                    System.out.println(" >> ENTRAR EM UM GRUPO << ");
                                     System.out.print("Informe o nome do grupo: ");
+                                    
                                     break;
                                 case 2:
+                                    System.out.println("---------------LISTA---------------");
+                                    grupo.toString();
+                                    System.out.println("---------------LISTA---------------");
                                     break;
-                                case 3:
-                                    break;
-                                case 4:
+                                case 0:
                                     break;
                                 default:
                                     System.out.println("---------------------------------------");

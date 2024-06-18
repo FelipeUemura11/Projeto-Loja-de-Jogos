@@ -1,9 +1,9 @@
 package Models;
 
-public class Adms extends Membro{
+public class Adiministrador extends Membro{
     private String moderacao;
 
-    public Adms(String nome_membro, String moderacao){
+    public Adiministrador(String nome_membro, String moderacao){
         super(nome_membro);
         this.moderacao = moderacao;
     }

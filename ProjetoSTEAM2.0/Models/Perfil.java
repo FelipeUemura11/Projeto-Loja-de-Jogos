@@ -7,16 +7,16 @@ public class Perfil{
 
     protected String nome;
     public List<Amigo> amigos; 
-    protected List<Grupo> grupos;
     protected List<Conquista> conquistas;
     protected List<Desejos> desejos;
+    protected Grupo grupo;
 
-    public Perfil(String nome) {
+    public Perfil(String nome, Grupo grupo) {
         this.nome = nome;
         this.amigos = new ArrayList<>();
-        this.grupos = new ArrayList<>();
         this.conquistas = new ArrayList<>();
         this.desejos = new ArrayList<>();
+        this.grupo = grupo;
     }
 
     public String getNome() {
@@ -43,7 +43,7 @@ public class Perfil{
         
         return null;
     }
-    // Funcao para lsitar os amigos
+    // Funcao para listar os amigos
     public Amigo listarAmigos(){
         int i = 0;
         for(Amigo amigo : amigos){
@@ -52,34 +52,13 @@ public class Perfil{
         }
         return null;
     }
-    // Funcoes para grupos
-    public List<Grupo> getGrupo(){
-        return grupos;
-    }
-    // Funcao para buscar grupo
-    public Grupo buscarGrupo(String nome_grupo){
-        return grupos.stream().filter(Grupo -> nome_grupo.equals(Grupo.getNomeGrupo())).findFirst().orElse(null);
-    }
-    // Funcao para sair do grupo
-    public Amigo sairGrupo(String nome_grupo){
 
-        Grupo encontrado = buscarGrupo(nome_grupo);
+    public Grupo getGrupo() {
+        return grupo;
+    }
 
-        if(encontrado != null){
-            grupos.remove(encontrado);
-        }else{
-            System.out.println("Grupo nao econtrado!");
-        }
-        
-        return null;
+    public void setGrupo(Grupo grupo) {
+        this.grupo = grupo;
     }
-    // Funcao para listar os grupos
-    public Grupo listarGrupos(){
-        int i = 0;
-        for(Grupo grupo : grupos){
-            i++;
-            System.out.println("Amigo ("+ i +"): "+grupo.getNomeGrupo());
-        }
-        return null;
-    }
+    
 }

@@ -7,11 +7,11 @@ public class Membro {
         this.nome_membro = nome_membro;
     }
 
-    public String getNome_membro() {
+    public String getNomeMembro() {
         return nome_membro;
     }
 
-    public void setNome_membro(String nome_membro) {
+    public void setNomeMembro(String nome_membro) {
         this.nome_membro = nome_membro;
     }
 }
