@@ -6,10 +6,11 @@ import java.util.List;
 
 import Controller.GrupoController;
 import Models.Amigo;
-import Models.Cadastro;
 import Models.Grupo;
-import Models.Visitante;
+import Models.Cadastro;
+import Models.Comunidade;
 import Models.Adiministrador;
+import Models.Visitante;
 
 public class FazerLogin {
 
@@ -71,7 +72,6 @@ public class FazerLogin {
             System.out.println(" >    2. Biblioteca  < ");
             System.out.println(" >    3. Loja        < ");
             System.out.println(" >    4. Noticias    < ");
-            System.out.println(" >    5. Comunidade  < ");
             System.out.println(" >    0. Sair        < ");
             System.out.println();
             
@@ -324,19 +324,15 @@ public class FazerLogin {
                     break;
                 case 2:
                     // Biblioteca
-                    // Lista de jogos, Favoritos
+                    // Lista de jogos do usuario, Favoritos
                     break;
                 case 3:
                     // Loja
                     // Jogos(categorias), Ofertas, Carrinho
                     break;
                 case 4:
-                    // Noticias
-                    // Catalogo, Noticias os jogos
-                    break;
-                case 5:
-                    // Comunidade
-                    // Discussoes, Oficina, Transmissoes
+                    Comunidade comunidade = new Comunidade();
+                    comunidade.gerenciarComunidade(scan);
                     break;
                 case 0:
                     // VOLTAR AO MENU
