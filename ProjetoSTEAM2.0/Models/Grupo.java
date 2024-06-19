@@ -19,6 +19,9 @@ public class Grupo {
     public void adicionarMembro(Membro membro){
         membros.add(membro);
     }
+    public void removerMembro(Membro membro){
+        membros.remove(membro);
+    }
     
     public String getNomeGrupo() {
         return nome_grupo;
@@ -37,7 +40,7 @@ public class Grupo {
     }
     @Override
     public String toString() {
-        return "Grupo:" + this.nome_grupo + "\nDescricao: " + this.desc_grupo + "\nNumero de Vagas: " + this.num_vagas;
+        return " > Grupo: " + nome_grupo + "\n > Descricao: " + desc_grupo + "\n > Numero de Vagas: " + num_vagas;
     }
 
 }

@@ -14,12 +14,12 @@ public class CriarPerfil {
 
     public void funcaoCriarPerfil(List<Cadastro> pessoa){
         
-        Grupo grupo = new Grupo("Nenhum", "Nenhum", 0);
+        Grupo nenhum = new Grupo("Nenhum", "Nenhum", 0);
 
         System.out.print("Digite seu nome: ");
         String nome = scan.nextLine();
 
-        Perfil novo_perfil = new Perfil(nome, grupo);
+        Perfil novo_perfil = new Perfil(nome, nenhum);
         
         System.out.print("Digite seu email: ");
         String email = scan.nextLine();
