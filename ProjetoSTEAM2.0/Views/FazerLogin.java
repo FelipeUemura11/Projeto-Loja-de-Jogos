@@ -211,7 +211,6 @@ public class FazerLogin {
                             GrupoController grupo_controller = new GrupoController();
                             // GRUPO "FANTASMA" PARA QUANDO O USUARIO FOR SAIR DE ALGUM GRUPO EXISTENTE
                             Grupo nenhum = new Grupo("Nenhum", "Nenhum", 0);
-                            pessoa_selecionada.getPerfil().setGrupo(nenhum);
                             // CLASSE MEMBRO(VISITANTE) PARA ENTRAR NO GRUPO
                             Visitante v = new Visitante(pessoa_selecionada.getPerfil().getNome(), "Calouro");
                             
@@ -240,6 +239,7 @@ public class FazerLogin {
                                             if(g.getNomeGrupo().equals(nome_grupo_entrar)){
                                                 System.out.println("\n->Entrou no grupo ["+g.getNomeGrupo()+"]");
                                                 g.adicionarMembro(v);
+                                                g.setNumVagas(g.getNumVagas() - 1);
                                                 pessoa_selecionada.getPerfil().setGrupo(g);
                                                 grupo_encontrado_entrar = true;
                                                 break;
@@ -258,6 +258,7 @@ public class FazerLogin {
                                             if(g.getNomeGrupo().equals(pessoa_selecionada.getPerfil().getGrupo().getNomeGrupo())){
                                                 System.out.println("\n-> Saiu do grupo ["+g.getNomeGrupo()+"]");
                                                 g.removerMembro(v);
+                                                g.setNumVagas(g.getNumVagas() + 1);
                                                 pessoa_selecionada.getPerfil().setGrupo(nenhum);
                                                 grupo_encontrado_sair = true;
                                                 break;

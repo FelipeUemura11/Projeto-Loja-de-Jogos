@@ -38,6 +38,9 @@ public class Grupo {
     public int getNumVagas() {
         return num_vagas;
     }
+    public void setNumVagas(int num_vagas) {
+        this.num_vagas = num_vagas;
+    }
     @Override
     public String toString() {
         return " > Grupo: " + nome_grupo + "\n > Descricao: " + desc_grupo + "\n > Numero de Vagas: " + num_vagas;

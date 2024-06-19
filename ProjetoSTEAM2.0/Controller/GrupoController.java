@@ -12,7 +12,7 @@ public class GrupoController {
         
         Grupo grupo1 = new Grupo("GALERA DO TI", "Grupo de amigos que fazem ciencia da computacao na UP", 45);
         Grupo grupo2 = new Grupo("ATLETAS DE CRISTO", "Grupo de jogadores abencoados", 40);
-        Grupo grupo3 = new Grupo("Torcida Furiosa", "Torcida organizada da Furia E-sports", 500);
+        Grupo grupo3 = new Grupo("Torcida Furiosa", "Torcida organizada da Furia E-sports", 55);
 
         grupo1.adicionarMembro(new Adiministrador("Gabriel", "Diretor"));
         grupo1.adicionarMembro(new Visitante("John", "Veterano"));
