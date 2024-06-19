@@ -1,6 +1,9 @@
 package Views;
 
 import java.util.Scanner;
+
+import Controller.GrupoController;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -195,10 +198,10 @@ public class FazerLogin {
                         case 4: // GRUPOS
 
                             int op = -1;
-                            Grupo grupo = new Grupo("", "", 0);
                             List<Grupo> grupos = new ArrayList<>();
-
-                            grupo.gruposExistentes(grupos);
+                            GrupoController grupo_controller = new GrupoController();
+                            
+                            grupo_controller.gruposExistentes(grupos); // adiciona grupos
 
                             System.out.println("\n-=-=-=-=> Grupos <=-=-=-=-\n");
                             System.out.println(" > 1. Entrar em um grupo    < ");
@@ -217,7 +220,9 @@ public class FazerLogin {
                                     break;
                                 case 2:
                                     System.out.println("---------------LISTA---------------");
-                                    grupo.toString();
+                                    for(Grupo g : grupos){
+                                        g.toString();
+                                    }
                                     System.out.println("---------------LISTA---------------");
                                     break;
                                 case 0:
