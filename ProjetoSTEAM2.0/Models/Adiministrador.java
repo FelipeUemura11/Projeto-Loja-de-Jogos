@@ -15,5 +15,9 @@ public class Adiministrador extends Membro{
     public void setModeracao(String moderacao) {
         this.moderacao = moderacao;
     }
+
+    public void verMembros(){
+        System.out.println("\nNome: "+ nome_membro +" Moderacao: "+ moderacao);
+    }
 }
 

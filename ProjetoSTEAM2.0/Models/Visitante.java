@@ -1,18 +1,14 @@
 package Models;
 
 public class Visitante extends Membro{
-    private String tipo_visitante; // Calouro ou Veterano
+    private String classe_visitante; // Calouro ou Veterano
 
-    public Visitante(String nome_membro, String tipo_visitante) {
+    public Visitante(String nome_membro, String classe_visitante) {
         super(nome_membro);
-        this.tipo_visitante = tipo_visitante;
+        this.classe_visitante = classe_visitante;
     }
-
-    public String getTipo_visitante() {
-        return tipo_visitante;
-    }
-
-    public void setTipo_visitante(String tipo_visitante) {
-        this.tipo_visitante = tipo_visitante;
+    
+    public void verMembros() {
+        System.out.println("\nNome: "+ nome_membro +" Classe: "+ classe_visitante);
     }
 }

@@ -6,12 +6,16 @@ import java.util.List;
 public class Perfil{
 
     protected String nome;
+    protected double saldo;
+    protected Grupo grupo;
     public List<Amigo> amigos; 
     protected List<Conquista> conquistas;
     protected List<Desejos> desejos;
 
-    public Perfil(String nome) {
+    public Perfil(String nome, double saldo, Grupo grupo) {
         this.nome = nome;
+        this.saldo = saldo;
+        this.grupo = grupo;
         this.amigos = new ArrayList<>();
         this.conquistas = new ArrayList<>();
         this.desejos = new ArrayList<>();
@@ -20,6 +24,23 @@ public class Perfil{
     public String getNome() {
         return nome;
     }
+
+    public double getSaldo(){
+        return saldo;
+    }
+
+    public Grupo getGrupo(){
+        return grupo;
+    }
+    
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
+    public void setGrupo(Grupo grupo) {
+        this.grupo = grupo;
+    }
+
     // Funcoes para amigo
     public List<Amigo> getAmigo(){
         return amigos;

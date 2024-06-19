@@ -5,8 +5,8 @@ import java.util.List;
 
 import Controller.PerfilController;
 import Models.Cadastro;
-import Models.Grupo;
 import Models.Perfil;
+import Models.Grupo;
 
 public class CriarPerfil {
     
@@ -17,10 +17,10 @@ public class CriarPerfil {
 
         System.out.print("Digite seu nome: ");
         String nome = scan.nextLine();
+        
+        Grupo nenhum = new Grupo("Nenhum", "Nenhum", 0);
 
-        Perfil novo_perfil = new Perfil(nome);
-
-        Grupo grupo = new Grupo("Nenhum", "Nenhum", 0);
+        Perfil novo_perfil = new Perfil(nome, 0.0, nenhum);
         
         System.out.print("Digite seu email: ");
         String email = scan.nextLine();
@@ -44,7 +44,7 @@ public class CriarPerfil {
             }
         }
         // Adiciona o novo perfil na lista de cadastro e verifica com try/catch
-        if(PerfilController.adicionarPerfil(pessoa, email, senha, novo_perfil, 0.0, grupo)){
+        if(PerfilController.adicionarPerfil(pessoa, email, senha, novo_perfil)){
             System.out.println("\n >> Perfil criado com sucesso! << ");
         }else{
             System.out.println("\n >> ERRO : Nao foi possivel adicionar usuario. << ");

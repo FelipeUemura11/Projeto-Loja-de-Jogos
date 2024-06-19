@@ -9,6 +9,7 @@ import Models.Amigo;
 import Models.Cadastro;
 import Models.Grupo;
 import Models.Visitante;
+import Models.Adiministrador;
 
 public class FazerLogin {
 
@@ -106,7 +107,7 @@ public class FazerLogin {
                             break;
                         case 2: // MINHA CARTEIRA
                             System.out.println("-----------------------------");
-                            System.out.println(" >> Seu saldo: R$"+pessoa_selecionada.getSaldo());
+                            System.out.println(" >> Seu saldo: R$"+pessoa_selecionada.getPerfil().getSaldo());
                             System.out.print(" >> Deseje adicionar dinheiro? sim(1) / nao(2): ");
                             int sim_nao = scan.nextInt();
 
@@ -114,9 +115,9 @@ public class FazerLogin {
                                 System.out.print("-> Informe a quantidade a ser adicionada: ");
                                 double saldo_adicional = scan.nextDouble();
 
-                                pessoa_selecionada.setSaldo(pessoa_selecionada.getSaldo() + saldo_adicional);
+                                pessoa_selecionada.getPerfil().setSaldo(pessoa_selecionada.getPerfil().getSaldo() + saldo_adicional);
 
-                                System.out.println("-> Saldo Atualizado! Saldo atual: R$"+ pessoa_selecionada.getSaldo());
+                                System.out.println("-> Saldo Atualizado! Saldo atual: R$"+ pessoa_selecionada.getPerfil().getSaldo());
                                 System.out.println("-----------------------------");
                             
                             }else{
@@ -221,6 +222,7 @@ public class FazerLogin {
                                 System.out.println(" > 1. Entrar em um grupo    < ");
                                 System.out.println(" > 2. Sair do grupo         < ");
                                 System.out.println(" > 3. Listar os Grupos      < ");
+                                System.out.println(" > 4. Analisar Grupo        < ");
                                 System.out.println(" > 0. Voltar ao perfil      < ");
                                 System.out.println();
                                 
@@ -231,7 +233,7 @@ public class FazerLogin {
                                 switch(op){
                                     case 1:
                                         boolean grupo_encontrado_entrar = false;
-                                        if(pessoa_selecionada.getGrupo().getNomeGrupo().equals(nenhum.getNomeGrupo())){
+                                        if(pessoa_selecionada.getPerfil().getGrupo().getNomeGrupo().equals(nenhum.getNomeGrupo())){
                                             System.out.println(" >> ENTRAR EM UM GRUPO << ");
                                             System.out.print("Informe o nome do grupo: ");
                                             String nome_grupo_entrar = scan.nextLine();
@@ -241,7 +243,7 @@ public class FazerLogin {
                                                     System.out.println("\n->Entrou no grupo ["+g.getNomeGrupo()+"]");
                                                     g.adicionarMembro(v);
                                                     g.setNumVagas(g.getNumVagas() - 1);
-                                                    pessoa_selecionada.setGrupo(g);
+                                                    pessoa_selecionada.getPerfil().setGrupo(g);
                                                     grupo_encontrado_entrar = true;
                                                     break;
                                                 }
@@ -256,15 +258,15 @@ public class FazerLogin {
                                         break;
                                     case 2:
                                         boolean grupo_encontrado_sair = false;
-                                        if(!pessoa_selecionada.getGrupo().getNomeGrupo().equals(nenhum.getNomeGrupo())){
+                                        if(!pessoa_selecionada.getPerfil().getGrupo().getNomeGrupo().equals(nenhum.getNomeGrupo())){
                                             System.out.println("\n >> SAIR DO GRUPO << ");
                                             
                                             for(Grupo g : grupos){
-                                                if(g.getNomeGrupo().equals(pessoa_selecionada.getGrupo().getNomeGrupo())){
+                                                if(g.getNomeGrupo().equals(pessoa_selecionada.getPerfil().getGrupo().getNomeGrupo())){
                                                     System.out.println("\n-> Saiu do grupo ["+g.getNomeGrupo()+"]");
                                                     g.removerMembro(v);
                                                     g.setNumVagas(g.getNumVagas() + 1);
-                                                    pessoa_selecionada.setGrupo(nenhum);
+                                                    pessoa_selecionada.getPerfil().setGrupo(nenhum);
                                                     grupo_encontrado_sair = true;
                                                     break;
                                                 }
@@ -282,6 +284,20 @@ public class FazerLogin {
                                             System.out.println("\n"+g.toString()+"\n");
                                         }
                                         System.out.println("---------------LISTA-DE-GRUPOS---------------");
+                                        break;
+                                    case 4:
+                                        System.out.print("Informe o nome do grupo: ");
+                                        String nome_grupo_buscar = scan.nextLine();
+
+                                        for(Grupo g : grupos){
+                                            if(g.getNomeGrupo().equals(nome_grupo_buscar)){
+                                                System.out.println("---------------INFO-GRUPO---------------");
+                                                System.out.println(g.toString());
+                                                ((Adiministrador) g.getMembros()).verMembros();
+                                                ((Visitante) g.getMembros()).verMembros();
+                                                System.out.println("---------------INFO-GRUPO---------------");
+                                            }
+                                        }
                                         break;
                                     case 0:
                                         break;
