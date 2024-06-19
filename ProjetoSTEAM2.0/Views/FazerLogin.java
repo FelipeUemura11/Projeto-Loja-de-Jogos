@@ -131,7 +131,7 @@ public class FazerLogin {
                             boolean amg_encontrado = false;
 
                             do{
-                                System.out.println("-=-=-=-=-=> Amigos <=-=-=-=-=-");
+                                System.out.println("=========== Amigos =========== ");
                                 System.out.println(" > 1. Adicionar novo amigo  < ");
                                 System.out.println(" > 2. Remover um amigo      < ");
                                 System.out.println(" > 3. Lista de amigos       < ");
@@ -218,7 +218,7 @@ public class FazerLogin {
                             grupo_controller.gruposExistentes(grupos); // adiciona grupos
                             
                             do{
-                                System.out.println("-=-=-=-=-=> Grupos <=-=-=-=-=-");
+                                System.out.println("=========== Grupos =========== ");
                                 System.out.println(" > 1. Entrar em um grupo    < ");
                                 System.out.println(" > 2. Sair do grupo         < ");
                                 System.out.println(" > 3. Listar os Grupos      < ");
@@ -254,7 +254,6 @@ public class FazerLogin {
                                         }else{
                                             System.out.println(" >> Voce ja esta em um grupo! << ");
                                         }
-                                        
                                         break;
                                     case 2:
                                         boolean grupo_encontrado_sair = false;
@@ -312,6 +311,24 @@ public class FazerLogin {
                         case 5: // DESEJOS
                             break;
                         case 6: //  DELETAR CONTA
+
+                            Login login = new Login();
+
+                            System.out.println("=========== DELETAR CONTA ===========");
+                            System.out.println("\nRealmente deseja deletar sua conta?");
+                            System.out.println("\t [1] Sim \t [2] Nao");
+                            int deletar_conta = scan.nextInt();
+
+                            if(deletar_conta == 1){
+                                System.out.println("Conta deletada com sucesso!");
+                                pessoa_selecionada.remove();
+                                login.inicio();
+                            }else if(deletar_conta == 2){
+                                System.out.println("Operacao cancelada!");
+                            }else{
+                                System.out.println("---------------------------------------");
+                                System.out.println(" >> Opcao Invalida! <<");
+                            }
                             break;
                         case 0: // VOLTAR AO MENU
                             break;
