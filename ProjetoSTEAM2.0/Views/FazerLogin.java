@@ -67,7 +67,7 @@ public class FazerLogin {
         int opc = -1;
 
         do{
-            System.out.println("-=-=-=-=-=> Menu <=-=-=-=-=-");
+            System.out.println("-=-=-=-=> Menu <=-=-=-=-");
             System.out.println(" >    1. Perfil      < ");
             System.out.println(" >    2. Biblioteca  < ");
             System.out.println(" >    3. Loja        < ");
@@ -101,12 +101,12 @@ public class FazerLogin {
         
                     switch(opcao){
                         case 1: // DETALHES DA CONTA
-                            System.out.println("\n-----------------------------");
+                            System.out.println("\n==> DETALHES DA CONTA <=======\n");
                             System.out.println(pessoa_selecionada.toString());
-                            System.out.println("-----------------------------");
+                            System.out.println("\n==> DETALHES DA CONTA <=======");
                             break;
                         case 2: // MINHA CARTEIRA
-                            System.out.println("-----------------------------");
+                            System.out.println("\n============ SALDO ============");
                             System.out.println(" >> Seu saldo: R$"+pessoa_selecionada.getPerfil().getSaldo());
                             System.out.print(" >> Deseje adicionar dinheiro? sim(1) / nao(2): ");
                             int sim_nao = scan.nextInt();
@@ -118,7 +118,7 @@ public class FazerLogin {
                                 pessoa_selecionada.getPerfil().setSaldo(pessoa_selecionada.getPerfil().getSaldo() + saldo_adicional);
 
                                 System.out.println("-> Saldo Atualizado! Saldo atual: R$"+ pessoa_selecionada.getPerfil().getSaldo());
-                                System.out.println("-----------------------------");
+                                System.out.println("\n============ SALDO ============\n");
                             
                             }else{
                                 break;
