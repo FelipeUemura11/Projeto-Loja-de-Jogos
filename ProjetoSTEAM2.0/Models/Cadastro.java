@@ -5,12 +5,18 @@ public class Cadastro{
     protected String senha;
     protected Perfil perfil;
     protected double saldo;
+    protected Grupo grupo;
 
-    public Cadastro (String email, String senha, Perfil perfil, double saldo) {
+    public Cadastro (String email, String senha, Perfil perfil, double saldo, Grupo grupo) {
         this.email = email;
         this.senha = senha;
         this.perfil = perfil;
         this.saldo = saldo;
+        this.grupo = grupo;
+    }
+
+    public Grupo getGrupo() {
+        return grupo;
     }
 
     public String getEmail() {
@@ -24,6 +30,7 @@ public class Cadastro{
     public Perfil getPerfil(){
         return perfil;
     }
+
     public double getSaldo() {
         return saldo;
     }
@@ -32,8 +39,12 @@ public class Cadastro{
         this.saldo = saldo;
     }
 
+    public void setGrupo(Grupo grupo) {
+        this.grupo = grupo;
+    }
+
     @Override
     public String toString() {
-        return "Nome: " + getPerfil().getNome() + "\nEmail: " + email + "\nSenha: " + senha + "\nSaldo: " + saldo+ "\nGrupo: "+getPerfil().getGrupo().getNomeGrupo();
+        return "Nome: " + getPerfil().getNome() + "\nEmail: " + email + "\nSenha: " + senha + "\nSaldo: R$" + saldo+ "\nGrupo: "+getGrupo().getNomeGrupo();
     }
 }

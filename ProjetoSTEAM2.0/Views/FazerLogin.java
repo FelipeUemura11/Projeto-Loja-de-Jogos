@@ -209,7 +209,7 @@ public class FazerLogin {
                             // LISTA DE GRUPOS EXISTENTES
                             List<Grupo> grupos = new ArrayList<>();
                             GrupoController grupo_controller = new GrupoController();
-                            // GRUPO "FANTASMA" PARA QUANDO O USUARIO FOR SAIR DE ALGUM GRUPO EXISTENTE
+                            // GRUPO "FANTASMA" PARA O USUARIO ENTRAR NELE QUANDO FOR SAIR DE ALGUM GRUPO
                             Grupo nenhum = new Grupo("Nenhum", "Nenhum", 0);
                             // CLASSE MEMBRO(VISITANTE) PARA ENTRAR NO GRUPO
                             Visitante v = new Visitante(pessoa_selecionada.getPerfil().getNome(), "Calouro");
@@ -231,41 +231,49 @@ public class FazerLogin {
                                 switch(op){
                                     case 1:
                                         boolean grupo_encontrado_entrar = false;
-                                        System.out.println(" >> ENTRAR EM UM GRUPO << ");
-                                        System.out.print("Informe o nome do grupo: ");
-                                        String nome_grupo_entrar = scan.nextLine();
-                                        
-                                        for(Grupo g : grupos){
-                                            if(g.getNomeGrupo().equals(nome_grupo_entrar)){
-                                                System.out.println("\n->Entrou no grupo ["+g.getNomeGrupo()+"]");
-                                                g.adicionarMembro(v);
-                                                g.setNumVagas(g.getNumVagas() - 1);
-                                                pessoa_selecionada.getPerfil().setGrupo(g);
-                                                grupo_encontrado_entrar = true;
-                                                break;
+                                        if(pessoa_selecionada.getGrupo().getNomeGrupo().equals(nenhum.getNomeGrupo())){
+                                            System.out.println(" >> ENTRAR EM UM GRUPO << ");
+                                            System.out.print("Informe o nome do grupo: ");
+                                            String nome_grupo_entrar = scan.nextLine();
+                                            
+                                            for(Grupo g : grupos){
+                                                if(g.getNomeGrupo().equals(nome_grupo_entrar)){
+                                                    System.out.println("\n->Entrou no grupo ["+g.getNomeGrupo()+"]");
+                                                    g.adicionarMembro(v);
+                                                    g.setNumVagas(g.getNumVagas() - 1);
+                                                    pessoa_selecionada.setGrupo(g);
+                                                    grupo_encontrado_entrar = true;
+                                                    break;
+                                                }
                                             }
-                                        }
-                                        if(!grupo_encontrado_entrar){
-                                            System.out.println(" >> Grupo nao encontrado! << ");
+                                            if(!grupo_encontrado_entrar){
+                                                System.out.println(" >> Grupo nao encontrado! << ");
+                                            }
+                                        }else{
+                                            System.out.println(" >> Voce ja esta em um grupo! << ");
                                         }
                                         
                                         break;
                                     case 2:
                                         boolean grupo_encontrado_sair = false;
-                                        System.out.println("\n >> SAIR DO GRUPO << ");
-
-                                        for(Grupo g : grupos){
-                                            if(g.getNomeGrupo().equals(pessoa_selecionada.getPerfil().getGrupo().getNomeGrupo())){
-                                                System.out.println("\n-> Saiu do grupo ["+g.getNomeGrupo()+"]");
-                                                g.removerMembro(v);
-                                                g.setNumVagas(g.getNumVagas() + 1);
-                                                pessoa_selecionada.getPerfil().setGrupo(nenhum);
-                                                grupo_encontrado_sair = true;
-                                                break;
+                                        if(!pessoa_selecionada.getGrupo().getNomeGrupo().equals(nenhum.getNomeGrupo())){
+                                            System.out.println("\n >> SAIR DO GRUPO << ");
+                                            
+                                            for(Grupo g : grupos){
+                                                if(g.getNomeGrupo().equals(pessoa_selecionada.getGrupo().getNomeGrupo())){
+                                                    System.out.println("\n-> Saiu do grupo ["+g.getNomeGrupo()+"]");
+                                                    g.removerMembro(v);
+                                                    g.setNumVagas(g.getNumVagas() + 1);
+                                                    pessoa_selecionada.setGrupo(nenhum);
+                                                    grupo_encontrado_sair = true;
+                                                    break;
+                                                }
                                             }
-                                        }
-                                        if(!grupo_encontrado_sair){
-                                            System.out.println(" >> Voce nao esta em nenhum grupo! << ");
+                                            if(!grupo_encontrado_sair){
+                                                System.out.println(" >> Voce nao esta em nenhum grupo! << ");
+                                            }
+                                        }else{
+                                            System.out.println(" >> Voce nao esta em um grupo! << ");
                                         }
                                         break;
                                     case 3:

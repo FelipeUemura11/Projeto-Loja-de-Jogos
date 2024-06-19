@@ -28,7 +28,7 @@ public class Login {
             System.out.print("Escolha uma opcao: ");
             
             opcao = scan.nextInt();
-            scan.nextLine(); // Limpar buffer
+            scan.nextLine();
 
             switch (opcao) {
                 case 1:

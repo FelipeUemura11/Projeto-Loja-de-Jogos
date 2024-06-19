@@ -9,14 +9,12 @@ public class Perfil{
     public List<Amigo> amigos; 
     protected List<Conquista> conquistas;
     protected List<Desejos> desejos;
-    protected Grupo grupo;
 
-    public Perfil(String nome, Grupo grupo) {
+    public Perfil(String nome) {
         this.nome = nome;
         this.amigos = new ArrayList<>();
         this.conquistas = new ArrayList<>();
         this.desejos = new ArrayList<>();
-        this.grupo = grupo;
     }
 
     public String getNome() {
@@ -51,14 +49,6 @@ public class Perfil{
             System.out.println("Amigo ("+ i +"): "+amigo.getNomeAmigo());
         }
         return null;
-    }
-
-    public Grupo getGrupo() {
-        return grupo;
-    }
-
-    public void setGrupo(Grupo grupo) {
-        this.grupo = grupo;
     }
     
 }
