@@ -32,7 +32,25 @@ public class Perfil{
     public Grupo getGrupo(){
         return grupo;
     }
+
     
+    
+    public List<Conquista> getConquistas() {
+        return conquistas;
+    }
+
+    public void setConquistas(List<Conquista> conquistas) {
+        this.conquistas = conquistas;
+    }
+
+    public List<Desejos> getDesejos() {
+        return desejos;
+    }
+
+    public void setDesejos(List<Desejos> desejos) {
+        this.desejos = desejos;
+    }
+
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }

@@ -91,7 +91,8 @@ public class FazerLogin {
                     System.out.println(" >  3. Amigos             < ");
                     System.out.println(" >  4. Grupos             < ");
                     System.out.println(" >  5. Desejos            < ");
-                    System.out.println(" >  6. Deletar Conta      < ");
+                    System.out.println(" >  6. Conquistas         < ");
+                    System.out.println(" >  7. Deletar Conta      < ");
                     System.out.println(" >  0. Voltar ao Menu     < ");
                     System.out.println();
                     
@@ -311,8 +312,77 @@ public class FazerLogin {
                                 }while(op != 0);
                             break;
                         case 5: // DESEJOS
+
+                            int option = -1;
+
+                            do{
+                                System.out.println("=========== DESEJOS ===========");
+                                System.out.println(" >     1. Lista Desejos      < "); 
+                                System.out.println(" >     2. Adicionar          < "); 
+                                System.out.println(" >     3. Remover            < "); 
+                                System.out.println(" >     0. Voltar             < "); 
+                                System.out.println();
+                                
+                                System.out.println("Escolha uma das opcoes: ");
+                                option = scan.nextInt();
+
+                                switch(option){
+                                    case 1:
+                                        System.out.println("=========== LISTA ===========");
+                                        pessoa_selecionada.getPerfil().getDesejos().toString();
+                                        System.out.println("=========== LISTA ===========");
+                                        break;
+                                    case 2:
+                                        System.out.println(" >> ADICIONAR << ");
+                                        break;
+                                    case 3:
+                                        System.out.println(" >> REMOVER << ");
+                                        break;
+                                    case 0:
+                                        break;
+                                    default:
+                                        System.out.println("---------------------------------------");
+                                        System.out.println(" >> Opcao Invalida! Tente novamente << ");
+                                        break;
+                                }
+                            
+                            }while(option != 0);
                             break;
-                        case 6: //  DELETAR CONTA
+                        case 6: // CONQUISTAS
+
+                            int options = -1;    
+
+                            System.out.println("=========== CONQUISTAS ===========");
+                            System.out.println(" >     1. Lista de Conquista    < "); 
+                            System.out.println(" >     2. Adicionar             < "); 
+                            System.out.println(" >     3. Remover               < "); 
+                            System.out.println(" >     0. Voltar                < ");
+                            System.out.println();
+
+                            System.out.println("Escolha uma das opcoes: ");
+                            options = scan.nextInt();
+
+                            switch(options){
+                                case 1:
+                                    System.out.println("=========== LISTA ===========");
+                                    pessoa_selecionada.getPerfil().getConquistas().toString();
+                                    System.out.println("=========== LISTA ===========");
+                                    break;
+                                case 2:
+                                    System.out.println(" >> ADICIONAR << ");
+                                    break;
+                                case 3:
+                                    System.out.println(" >> REMOVER << ");
+                                    break;
+                                case 0:
+                                    break;
+                                default:
+                                    System.out.println("---------------------------------------");
+                                    System.out.println(" >> Opcao Invalida! Tente novamente << ");
+                                    break;
+                            }
+                            break;
+                        case 7: //  DELETAR CONTA
 
                             Login login = new Login();
 
