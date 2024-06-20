@@ -7,17 +7,9 @@ public class Adiministrador extends Membro{
         super(nome_membro);
         this.moderacao = moderacao;
     }
-
-    public String getModeracao() {
-        return moderacao;
-    }
-
-    public void setModeracao(String moderacao) {
-        this.moderacao = moderacao;
-    }
-
+    @Override
     public void verMembros(){
-        System.out.println("\nNome: "+ nome_membro +" Moderacao: "+ moderacao);
+        System.out.println("\nNome: "+ nome_membro +" \nModeracao: "+ moderacao);
     }
 }
 

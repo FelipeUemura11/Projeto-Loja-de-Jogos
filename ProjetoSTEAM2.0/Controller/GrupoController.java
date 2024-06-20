@@ -21,7 +21,7 @@ public class GrupoController {
         grupo1.adicionarMembro(new Visitante("Luiz", "Calouro"));
     
         grupo2.adicionarMembro(new Adiministrador("Jose", "Diretor"));
-        grupo2.adicionarMembro(new Adiministrador("Maria", "Dretor"));
+        grupo2.adicionarMembro(new Adiministrador("Maria", "Diretor"));
         grupo2.adicionarMembro(new Adiministrador("Gabriel", "Moderador"));
         grupo2.adicionarMembro(new Visitante("Joao", "Veterano"));
         grupo2.adicionarMembro(new Visitante("Pedro", "Calouro"));

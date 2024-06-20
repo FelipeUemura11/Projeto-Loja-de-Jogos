@@ -31,7 +31,7 @@ public class Loja {
 
     public void gerenciarLoja(Scanner scanner) {
         while (true) {
-            System.out.println("\n===== Loja =====");
+            System.out.println("\n=========== Loja ===========");
             System.out.println("1. Ver Destaques");
             System.out.println("2. Ver Lista de Desejos");
             System.out.println("3. Ver Ofertas");

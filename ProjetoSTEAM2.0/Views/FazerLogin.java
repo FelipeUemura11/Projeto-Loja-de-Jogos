@@ -7,9 +7,9 @@ import java.util.List;
 import Controller.GrupoController;
 import Models.Amigo;
 import Models.Grupo;
+import Models.Membro;
 import Models.Cadastro;
 import Models.Comunidade;
-import Models.Adiministrador;
 import Models.Visitante;
 
 public class FazerLogin {
@@ -292,8 +292,10 @@ public class FazerLogin {
                                             if(g.getNomeGrupo().equals(nome_grupo_buscar)){
                                                 System.out.println("---------------INFO-GRUPO---------------");
                                                 System.out.println(g.toString());
-                                                ((Adiministrador) g.getMembros()).verMembros();
-                                                ((Visitante) g.getMembros()).verMembros();
+                                                System.out.println("\n >> Membros << ");
+                                                for(Membro m : g.getMembros()){
+                                                    m.verMembros();
+                                                }
                                                 System.out.println("---------------INFO-GRUPO---------------");
                                             }
                                         }
@@ -316,12 +318,12 @@ public class FazerLogin {
 
                             System.out.println("=========== DELETAR CONTA ===========");
                             System.out.println("\nRealmente deseja deletar sua conta?");
-                            System.out.println("\t [1] Sim \t [2] Nao");
+                            System.out.println("\t [1] Sim   [2] Nao");
                             int deletar_conta = scan.nextInt();
 
                             if(deletar_conta == 1){
                                 System.out.println("Conta deletada com sucesso!");
-                                pessoa_selecionada.remove();
+                                pessoa.remove(pessoa_selecionada);
                                 login.inicio();
                             }else if(deletar_conta == 2){
                                 System.out.println("Operacao cancelada!");

@@ -7,8 +7,8 @@ public class Visitante extends Membro{
         super(nome_membro);
         this.classe_visitante = classe_visitante;
     }
-    
+    @Override
     public void verMembros() {
-        System.out.println("\nNome: "+ nome_membro +" Classe: "+ classe_visitante);
+        System.out.println("\nNome: "+ nome_membro +" \nClasse: "+ classe_visitante);
     }
 }
