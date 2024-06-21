@@ -71,7 +71,7 @@ public class FazerLogin {
             System.out.println(" >    1. Perfil      < ");
             System.out.println(" >    2. Biblioteca  < ");
             System.out.println(" >    3. Loja        < ");
-            System.out.println(" >    4. Noticias    < ");
+            System.out.println(" >    4. Comunidade  < ");
             System.out.println(" >    0. Sair        < ");
             System.out.println();
             
@@ -158,7 +158,7 @@ public class FazerLogin {
                                                     break;
                                                 }
                                                 amg_encontrado = true;
-                                                System.out.println("\n >> Novo amigo adicionado! -> "+pessoas.getPerfil().getNome()+" << \n");
+                                                System.out.println("\n >> Novo amigo adicionado! ["+pessoas.getPerfil().getNome()+"] << \n");
                                                 pessoa_selecionada.getPerfil().amigos.add(new Amigo(pessoas.getPerfil().getNome()));
                                                 break;
                                             }
@@ -236,17 +236,27 @@ public class FazerLogin {
                                         boolean grupo_encontrado_entrar = false;
                                         if(pessoa_selecionada.getPerfil().getGrupo().getNomeGrupo().equals(nenhum.getNomeGrupo())){
                                             System.out.println(" >> ENTRAR EM UM GRUPO << ");
-                                            System.out.print("Informe o nome do grupo: ");
+                                            System.out.println("====================================================");
+                                            for(Grupo g : grupos){
+                                                System.out.print("["+g.getNomeGrupo()+"] ");
+                                            }
+                                            System.out.println("\n====================================================");
+                                            System.out.print("\nInforme o nome do grupo: ");
                                             String nome_grupo_entrar = scan.nextLine();
                                             
+
                                             for(Grupo g : grupos){
                                                 if(g.getNomeGrupo().equals(nome_grupo_entrar)){
-                                                    System.out.println("\n->Entrou no grupo ["+g.getNomeGrupo()+"]");
-                                                    g.adicionarMembro(v);
-                                                    g.setNumVagas(g.getNumVagas() - 1);
-                                                    pessoa_selecionada.getPerfil().setGrupo(g);
-                                                    grupo_encontrado_entrar = true;
-                                                    break;
+                                                    if(g.getNumVagas() < 1){
+                                                        System.out.println(" >> Grupo lotado! << ");
+                                                    }else{
+                                                        System.out.println("\n->Entrou no grupo ["+g.getNomeGrupo()+"]\n");
+                                                        g.adicionarMembro(v);
+                                                        g.setNumVagas(g.getNumVagas() - 1);
+                                                        pessoa_selecionada.getPerfil().setGrupo(g);
+                                                        grupo_encontrado_entrar = true;
+                                                        break;
+                                                    }
                                                 }
                                             }
                                             if(!grupo_encontrado_entrar){

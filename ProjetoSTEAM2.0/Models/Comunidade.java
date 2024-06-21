@@ -38,6 +38,8 @@ public class Comunidade {
         do {
             System.out.println("\n=============== Comunidade ===============");
             System.out.println("1. Ver Noticias");
+            // 2. Ver Discussoes ---> Comentarios de pessoas influentes na comunidade falando sobre jogos
+            // 3. Ver 
             System.out.println("2. Adicionar noticia de Jogo");
             System.out.println("0. Voltar");
             System.out.print("Escolha uma opção: ");
