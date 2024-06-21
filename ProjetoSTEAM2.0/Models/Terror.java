@@ -8,7 +8,7 @@ public class Terror extends Categoria{
 
     @Override
     public void exibirInfo() {
-            System.out.println("Categoria: " + getNome());
+            System.out.println("Categoria: " + getNomeCategoria());
             System.out.println("Descrição: Jogos com terror psicológico.");
             System.out.println("Jogos: \n");
             System.out.println("Amnesia: The Bunker: Amnesia: The Bunker é um jogo de terror em primeira pessoa ambientado em um bunker desolado da Primeira Guerra Mundial. Enfrente os terrores que espreitam no escuro. Procure e use as ferramentas e armas à sua disposição. Mantenha as luzes acesas a todo custo e escape com vida. \n");

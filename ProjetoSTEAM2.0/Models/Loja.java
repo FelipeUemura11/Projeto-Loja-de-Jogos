@@ -5,73 +5,77 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Loja {
-    private List<ListaJogo> destaques;
-    private List<ListaJogo> listaDeDesejos;
-    private List<ListaJogo> ofertas;
-    private Carrinho carrinho;
 
-    public Loja() {
-        this.destaques = new ArrayList<>();
-        this.listaDeDesejos = new ArrayList<>();
-        this.ofertas = new ArrayList<>();
-        this.carrinho = new Carrinho();
-    }
+    List<ListaJogo> jogos = new ArrayList<>();
+    List<ListaJogo> destaques = new ArrayList<>();
+    List<ListaJogo> ofertas = new ArrayList<>();
 
-    public void adicionarDestaque(ListaJogo jogo) {
-        destaques.add(jogo);
-    }
+    public void gerenciarLoja(Scanner scan) {
 
-    public void adicionarListaDeDesejos(ListaJogo jogo) {
-        listaDeDesejos.add(jogo);
-    }
+        int opcao = -1;
 
-    public void adicionarOferta(ListaJogo jogo) {
-        ofertas.add(jogo);
-    }
-
-    public void gerenciarLoja(Scanner scanner) {
-        while (true) {
+        while (opcao != 0 ) {
             System.out.println("\n=========== Loja ===========");
-            System.out.println("1. Ver Destaques");
-            System.out.println("2. Ver Lista de Desejos");
-            System.out.println("3. Ver Ofertas");
-            System.out.println("4. Ver Carrinho");
-            System.out.println("5. Voltar");
+            System.out.println("1. Ver jogos");
+            System.out.println("2. Ver Destaques");
+            System.out.println("4. Ver Ofertas");
+            System.out.println("5. Ver Carrinho");
+            System.out.println("0. Voltar");
             System.out.print("Escolha uma opção: ");
 
-            int opcao = scanner.nextInt();
-            scanner.nextLine(); // Limpar buffer
+            opcao = scan.nextInt();
+            scan.nextLine();
 
             switch (opcao) {
                 case 1:
-                    exibirJogos(destaques, "Destaques");
+                    //jogos.jogosExistentes();
+                    exibirJogos(jogos);
                     break;
                 case 2:
-                    exibirJogos(listaDeDesejos, "Lista de Desejos");
+                    exibirDestaques(destaques);
                     break;
                 case 3:
-                    exibirJogos(ofertas, "Ofertas");
+                    exibirOfertas(ofertas);
                     break;
                 case 4:
-                    carrinho.visualizarCarrinho();
+                    //carrinho.visualizarCarrinho();
                     break;
-                case 5:
-                    return;
+                case 0:
+                    break;
                 default:
-                    System.out.println("Opção inválida! Tente novamente.");
+                    System.out.println("---------------------------------------");
+                    System.out.println(" >> Opcao Invalida! << ");
+                    break;
             }
         }
     }
 
-    private void exibirJogos(List<ListaJogo> jogos, String tipo) {
-        System.out.println("\n===== " + tipo + " =====");
-        if (jogos.isEmpty()) {
-            System.out.println("Nenhum jogo disponível.");
-        } else {
-            for (ListaJogo jogo : jogos) {
-                System.out.println(jogo);
-                System.out.println("----------------------------------");
-            }
+    public void exibirJogos(List<ListaJogo> jogos){
+        
+        System.out.println("\n=========== JOGOS ===========");
+        for (ListaJogo jogo : jogos) {
+            System.out.println(jogo);
+            System.out.println("----------------------------------");
         }
+        
+    }
+
+    public void exibirDestaques(List<ListaJogo> destaques){
+
+        System.out.println("\n=========== DESTAQUES ===========");
+        for (ListaJogo destaque : destaques) {
+            System.out.println(destaque);
+            System.out.println("----------------------------------");
+        }
+        
+    }
+    public void exibirOfertas(List<ListaJogo> ofertas) {
+
+        System.out.println("\n=========== DESTAQUES ===========");
+        for (ListaJogo oferta : ofertas) {
+            System.out.println(oferta);
+            System.out.println("----------------------------------");
+        }
+        
     }
 }

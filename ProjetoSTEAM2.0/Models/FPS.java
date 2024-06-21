@@ -7,7 +7,7 @@ public class FPS extends Categoria {
 
     @Override
     public void exibirInfo() {
-        System.out.println("Categoria: " + getNome());
+        System.out.println("Categoria: " + getNomeCategoria());
         System.out.println("Descrição: Jogos de tiro em primeira pessoa.");
         System.out.println("Jogos:\n");
         System.out.println("- Counter Strike: Há mais de duas décadas, o Counter-Strike oferece uma experiência competitiva de elite moldada por milhões de jogadores mundialmente. Agora, o próximo capítulo da história do CS vai começar. Isso é Counter-Strike 2.\n");

@@ -7,7 +7,7 @@ public class RPG extends Categoria {
 
     @Override
     public void exibirInfo() {
-        System.out.println("Categoria: " + getNome());
+        System.out.println("Categoria: " + getNomeCategoria());
         System.out.println("Descrição: Jogos de interpretação de papéis.");
     }
 }

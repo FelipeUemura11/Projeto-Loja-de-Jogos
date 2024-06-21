@@ -11,6 +11,7 @@ import Models.Membro;
 import Models.Cadastro;
 import Models.Comunidade;
 import Models.Visitante;
+import Models.Loja;
 
 public class FazerLogin {
 
@@ -421,15 +422,15 @@ public class FazerLogin {
                     }
                 };
                     break;
-                case 2:
-                    // Biblioteca
-                    // Lista de jogos do usuario, Favoritos
+                case 2: // BIBLIOTECA
+                    //Biblioteca biblioteca = new Biblioteca();
+                    //biblioteca.gerenciarBiblioteca(scan);
                     break;
-                case 3:
-                    // Loja
-                    // Jogos(categorias), Ofertas, Carrinho
+                case 3: // LOJA
+                    Loja loja = new Loja();
+                    loja.gerenciarLoja(scan);
                     break;
-                case 4:
+                case 4: // COMUNIDADE
                     Comunidade comunidade = new Comunidade();
                     comunidade.gerenciarComunidade(scan);
                     break;

@@ -1,14 +1,14 @@
 package Models;
 
 public abstract class Categoria {
-    private String nome;
+    private String nome_categoria;
 
-    public Categoria(String nome) {
-        this.nome = nome;
+    public Categoria(String nome_categoria) {
+        this.nome_categoria = nome_categoria;
     }
 
-    public String getNome() {
-        return nome;
+    public String getNomeCategoria() {
+        return nome_categoria;
     }
 
     public abstract void exibirInfo();

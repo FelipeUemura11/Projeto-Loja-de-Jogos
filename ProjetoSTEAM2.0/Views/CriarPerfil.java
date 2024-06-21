@@ -13,7 +13,6 @@ public class CriarPerfil {
     Scanner scan = new Scanner(System.in);
 
     public void funcaoCriarPerfil(List<Cadastro> pessoa){
-        
 
         System.out.print("Digite seu nome: ");
         String nome = scan.nextLine();

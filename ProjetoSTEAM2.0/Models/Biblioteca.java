@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Biblioteca {
+public class Biblioteca{
     private List<ListaJogo> jogos;
+    ListaJogo jogo_selecionado = null;
 
     public Biblioteca() {
         this.jogos = new ArrayList<>();
@@ -31,7 +32,7 @@ public class Biblioteca {
     public void gerenciarBiblioteca(Scanner scanner) {
         while (true) {
             System.out.println("\n===== Biblioteca =====");
-            System.out.println("1. Listar Jogos");
+            System.out.println("1. Listar meus Jogos");
             System.out.println("2. Voltar");
             System.out.print("Escolha uma opção: ");
 
@@ -40,13 +41,14 @@ public class Biblioteca {
 
             switch (opcao) {
                 case 1:
-                    listarJogos();
-                    break;
+                System.out.println(" >> LISTA DE JOGOS << ");
+                break;
                 case 2:
+                System.out.println("voltando...");
                     return;
                 default:
-                    System.out.println("Opção inválida! Tente novamente.");
+                    System.out.println("Opcao invalida! Tente novamente.");
+            }
             }
         }
     }
-}

@@ -9,6 +9,10 @@ public class ListaJogo {
         this.preco = preco;
     }
 
+    public void jogosExistentes(){
+        
+    }
+
     public String getTitulo() {
         return titulo;
     }
@@ -27,6 +31,6 @@ public class ListaJogo {
 
     @Override
     public String toString() {
-        return "Título: " + titulo + "\nPreço: " + preco;
+        return "Titulo: " + titulo + "\nPreco: " + preco;
     }
 }
