@@ -7,11 +7,11 @@ public class Desejos {
         this.nome = nome;
     }
 
-    public String getNome() {
+    public String getNomeDesejos() {
         return nome;
     }
 
-    public void setNome(String nome) {
+    public void setNomeDesejos(String nome) {
         this.nome = nome;
     }
 

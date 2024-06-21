@@ -7,11 +7,11 @@ public class Conquista {
         this.nome = nome;
     }
 
-    public String getNome() {
+    public String getNomeConquista() {
         return nome;
     }
 
-    public void setNome(String nome) {
+    public void setNomeConquista(String nome) {
         this.nome = nome;
     }
 
