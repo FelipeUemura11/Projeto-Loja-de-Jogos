@@ -1,13 +1,22 @@
 package Models;
 
 public class Plataforma extends Categoria {
-    public Plataforma() {
-        super("Plataforma");
+    private String desc_categoria;
+
+    public Plataforma(String nome_categoria, String desc_categoria) {
+        super(nome_categoria);
+        this.desc_categoria = desc_categoria;
     }
 
+    public String getDesc_categoria() {
+        return desc_categoria;
+    }
+
+    public void setDesc_categoria(String desc_categoria) {
+        this.desc_categoria = desc_categoria;
+    }
     @Override
-    public void exibirInfo() {
-        System.out.println("Categoria: " +getNomeCategoria());
-        System.out.println("Descrição: Jogos de plataformas.");
+    public String toString() {
+        return "Descricao: " + desc_categoria;
     }
 }

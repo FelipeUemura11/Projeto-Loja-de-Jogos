@@ -5,8 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Controller.GrupoController;
+import Controller.JogosController;
 import Models.Amigo;
 import Models.Grupo;
+import Models.ListaJogo;
 import Models.Membro;
 import Models.Cadastro;
 import Models.Comunidade;
@@ -65,8 +67,10 @@ public class FazerLogin {
             System.out.println("\n->Login realizado com sucesso como [" + pessoa_selecionada.getPerfil().getNome() + "]!\n");
         }
         
+        // MENU PRINCIPAL
+        List<ListaJogo> jogos = new ArrayList<>();
+        JogosController jogos_controller = new JogosController();
         int opc = -1;
-
         do{
             System.out.println("-=-=-=-=> Menu <=-=-=-=-");
             System.out.println(" >    1. Perfil      < ");
@@ -217,7 +221,7 @@ public class FazerLogin {
                             // CLASSE MEMBRO(VISITANTE) PARA ENTRAR NO GRUPO
                             Visitante v = new Visitante(pessoa_selecionada.getPerfil().getNome(), "Calouro");
                             
-                            grupo_controller.gruposExistentes(grupos); // adiciona grupos
+                            grupo_controller.gruposExistentes(grupos); // adicicao de grupos no sistema
                             
                             do{
                                 System.out.println("=========== Grupos =========== ");
@@ -393,7 +397,7 @@ public class FazerLogin {
                                     break;
                             }
                             break;
-                        case 7: //  DELETAR CONTA
+                        case 7: // DELETAR CONTA
 
                             Login login = new Login();
 
@@ -427,8 +431,9 @@ public class FazerLogin {
                     //biblioteca.gerenciarBiblioteca(scan);
                     break;
                 case 3: // LOJA
+                    jogos_controller.jogosExistentes(jogos); // adicao de jogos no sistema
                     Loja loja = new Loja();
-                    loja.gerenciarLoja(scan);
+                    loja.gerenciarLoja(jogos);
                     break;
                 case 4: // COMUNIDADE
                     Comunidade comunidade = new Comunidade();
@@ -443,7 +448,5 @@ public class FazerLogin {
             }
 
         }while(opc != 0);
-
     }
-
 }

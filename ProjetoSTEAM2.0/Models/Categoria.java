@@ -1,6 +1,6 @@
 package Models;
 
-public abstract class Categoria {
+public class Categoria {
     private String nome_categoria;
 
     public Categoria(String nome_categoria) {
@@ -11,5 +11,4 @@ public abstract class Categoria {
         return nome_categoria;
     }
 
-    public abstract void exibirInfo();
 }

@@ -10,7 +10,9 @@ public class Loja {
     List<ListaJogo> destaques = new ArrayList<>();
     List<ListaJogo> ofertas = new ArrayList<>();
 
-    public void gerenciarLoja(Scanner scan) {
+    Scanner scan = new Scanner(System.in);
+
+    public void gerenciarLoja(List<ListaJogo> jogos) {
 
         int opcao = -1;
 
@@ -28,7 +30,6 @@ public class Loja {
 
             switch (opcao) {
                 case 1:
-                    //jogos.jogosExistentes();
                     exibirJogos(jogos);
                     break;
                 case 2:
@@ -52,19 +53,23 @@ public class Loja {
 
     public void exibirJogos(List<ListaJogo> jogos){
         
-        System.out.println("\n=========== JOGOS ===========");
-        for (ListaJogo jogo : jogos) {
-            System.out.println(jogo);
-            System.out.println("----------------------------------");
+        System.out.println("\n=========== JOGOS ===========\n");
+        for(ListaJogo j : jogos){
+            for(Categoria c : j.getCategoria()){
+                System.out.println("==>["+c.getNomeCategoria()+"]<============================================");
+                System.out.println(c.toString()); // descricao
+                System.out.println("Nome: " + j.getTitulo());
+                System.out.println("Preco: R$" + j.getPreco());
+                System.out.println();
+            }
         }
-        
     }
 
     public void exibirDestaques(List<ListaJogo> destaques){
 
         System.out.println("\n=========== DESTAQUES ===========");
         for (ListaJogo destaque : destaques) {
-            System.out.println(destaque);
+            System.out.println(destaque.toString());
             System.out.println("----------------------------------");
         }
         
@@ -73,7 +78,7 @@ public class Loja {
 
         System.out.println("\n=========== DESTAQUES ===========");
         for (ListaJogo oferta : ofertas) {
-            System.out.println(oferta);
+            System.out.println(oferta.toString());
             System.out.println("----------------------------------");
         }
         

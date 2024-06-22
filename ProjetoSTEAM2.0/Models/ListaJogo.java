@@ -1,16 +1,25 @@
 package Models;
 
+import java.util.List;
+import java.util.ArrayList;
+
 public class ListaJogo {
+    private List<Categoria> categorias;
     private String titulo;
     private double preco;
 
-    ListaJogo(String titulo, double preco) {
+    public ListaJogo(String titulo, double preco){
+        this.categorias = new ArrayList<>(); 
         this.titulo = titulo;
         this.preco = preco;
     }
 
-    public void jogosExistentes(){
-        
+    public void adicionarCategoria(Categoria categoria){
+        categorias.add(categoria);
+    }
+    
+    public List<Categoria> getCategoria() {
+        return categorias;
     }
 
     public String getTitulo() {
@@ -31,6 +40,6 @@ public class ListaJogo {
 
     @Override
     public String toString() {
-        return "Titulo: " + titulo + "\nPreco: " + preco;
+        return "Categoria: " + categorias + "\nTitulo: " + titulo + "\nPreco: " + preco;
     }
 }

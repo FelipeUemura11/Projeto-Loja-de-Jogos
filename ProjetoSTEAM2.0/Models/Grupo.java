@@ -19,6 +19,7 @@ public class Grupo {
     public void adicionarMembro(Membro membro){
         membros.add(membro);
     }
+    // funcao para remover membro
     public void removerMembro(Membro membro){
         membros.remove(membro);
     }
