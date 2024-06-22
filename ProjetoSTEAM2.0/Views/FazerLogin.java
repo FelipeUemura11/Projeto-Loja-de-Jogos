@@ -56,7 +56,7 @@ public class FazerLogin {
 
             System.out.print(" >> Digite sua senha: ");
             senha = scan.nextLine();
-
+            
             if(pessoa_selecionada.getSenha().equals(senha)){
                 senhaVerificado = true;
                 break;
@@ -66,7 +66,7 @@ public class FazerLogin {
                 System.out.println("Senha incorreta...");
             }
         }
-
+        
         if(emailVerificado && senhaVerificado){
             System.out.println("\n->Login realizado com sucesso como [" + pessoa_selecionada.getPerfil().getNome() + "]!\n");
         }
@@ -75,6 +75,7 @@ public class FazerLogin {
         List<ListaJogo> jogos = new ArrayList<>();
         List<ListaDestaque> destaques = new ArrayList<>();
         List<ListaOferta> ofertas = new ArrayList<>();
+        List<Grupo> grupos = new ArrayList<>();
 
         JogosController jogos_controller = new JogosController();
         jogos_controller.jogosExistentes(jogos, destaques, ofertas); // adicao de jogos no sistema
@@ -223,9 +224,8 @@ public class FazerLogin {
                             int op = -1;
 
                             // LISTA DE GRUPOS EXISTENTES
-                            List<Grupo> grupos = new ArrayList<>();
                             GrupoController grupo_controller = new GrupoController();
-                            // GRUPO "FANTASMA" PARA O USUARIO ENTRAR NELE QUANDO FOR SAIR DE ALGUM GRUPO
+                            // GRUPO "FANTASMA" PARA O USUARIO FICAR NELE TEMPORARIAMENTE QUANDO FOR SAIR DE ALGUM GRUPO
                             Grupo nenhum = new Grupo("Nenhum", "Nenhum", 0);
                             // CLASSE MEMBRO(VISITANTE) PARA ENTRAR NO GRUPO
                             Visitante v = new Visitante(pessoa_selecionada.getPerfil().getNome(), "Calouro");
