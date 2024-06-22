@@ -1,20 +1,25 @@
 package Models;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class ListaDeDesejos {
-    private List<ListaJogo> jogos;
+    private String nome_desejo;
 
-    public ListaDeDesejos() {
-        this.jogos = new ArrayList<>();
+    public ListaDeDesejos(String nome_desejo) {
+        this.nome_desejo = nome_desejo;
     }
 
-    public void adicionarJogo(ListaJogo jogo) {
-        jogos.add(jogo);
+    public String getNomeDesejo() {
+        return nome_desejo;
     }
 
-    public List<ListaJogo> getJogos() {
-        return jogos;
+    public void setNomeDesejo(String nome_desejo) {
+        this.nome_desejo = nome_desejo;
     }
+
+    @Override
+    public String toString() {
+        return "ListaDeDesejos: " + nome_desejo;
+    }
+
+    
 }

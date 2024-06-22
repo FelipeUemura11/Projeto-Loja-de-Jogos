@@ -5,50 +5,54 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Biblioteca{
-    private List<ListaJogo> jogos;
-    ListaJogo jogo_selecionado = null;
 
-    public Biblioteca() {
-        this.jogos = new ArrayList<>();
-    }
+    Scanner
+    
+    public void gerenciarBiblioteca(Cadastro) {
 
-    public void adicionarJogo(ListaJogo jogo) {
-        jogos.add(jogo);
-    }
+        int opcao = -1;
 
-    public void listarJogos() {
-        if (jogos.isEmpty()) {
-            System.out.println("Nenhum jogo na biblioteca.");
-            return;
-        }
-
-        System.out.println("===== Jogos na Biblioteca =====");
-        for (ListaJogo j : jogos) {
-            System.out.println(j);
-            System.out.println("----------------------------------");
-        }
-    }
-
-    public void gerenciarBiblioteca(Scanner scanner) {
-        while (true) {
+        while (opcao != 0) {
             System.out.println("\n===== Biblioteca =====");
             System.out.println("1. Listar meus Jogos");
-            System.out.println("2. Voltar");
+            System.out.println("2. Adicionar Favoritos");
+            System.out.println("3. Remover Favoritos");
+            System.out.println("0. Voltar");
             System.out.print("Escolha uma opção: ");
-
-            int opcao = scanner.nextInt();
-            scanner.nextLine(); // Limpar buffer
-
+            
+            int opcao = scan.nextInt();
+            scan.nextLine(); // Limpar buffer
+            
             switch (opcao) {
                 case 1:
-                System.out.println(" >> LISTA DE JOGOS << ");
-                break;
+                    System.out.println(" >> LISTA DE JOGOS << ");
+                    // funcao list
+                    break;
                 case 2:
-                System.out.println("voltando...");
-                    return;
+                    System.out.println(" >> FAVORITAR << ");
+                    break;
+                case 3:
+                    System.out.println(" >> DESFAVORITAR << ");
+                    break;
+                case 0:
+                    break;
                 default:
-                    System.out.println("Opcao invalida! Tente novamente.");
-            }
+                    System.out.println("---------------------------------------");
+                    System.out.println(" >> Opcao Invalida! << ");
+                    break;
+                }
             }
         }
-    }
+        public void listarJogos() {
+            if (jogos.isEmpty()) {
+                System.out.println("Nenhum jogo na biblioteca.");
+                return;
+            }
+        
+            System.out.println("===== Jogos na Biblioteca =====");
+            for (ListaJogo j : jogos) {
+                System.out.println(j);
+                System.out.println("----------------------------------");
+            }
+        }
+}

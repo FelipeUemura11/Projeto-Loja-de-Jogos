@@ -18,25 +18,25 @@ public class JogosController {
     public void jogosExistentes(List<ListaJogo> jogos, List<ListaDestaque> destaques, List<ListaOferta> ofertas){
         
         // OFERTAS
-        ListaOferta oferta1 = new ListaOferta("Rocket League", 30.0);
-        ListaOferta oferta2 = new ListaOferta("Fortnite", 55.0);
-        ListaOferta oferta3 = new ListaOferta("Call Of Duty", 80.0);
+        ListaOferta oferta1 = new ListaOferta("ROCKET LEAGUE", 30.0);
+        ListaOferta oferta2 = new ListaOferta("FORTNITE", 55.0);
+        ListaOferta oferta3 = new ListaOferta("CALL OF DUTY", 80.0);
         ofertas.add(oferta1);
         ofertas.add(oferta2);
         ofertas.add(oferta3);
 
         // DESTAQUES
         ListaDestaque destaque1 = new ListaDestaque("ROBLOX", 33.0);
-        ListaDestaque destaque2 = new ListaDestaque("League of Legends", 50.0);
+        ListaDestaque destaque2 = new ListaDestaque("LOL", 50.0);
         ListaDestaque destaque3 = new ListaDestaque("MINECRAFT 2", 200.0);
         destaques.add(destaque1);
         destaques.add(destaque2);
         destaques.add(destaque3);
 
         // FPS
-        ListaJogo fps1 = new ListaJogo("Counte-Strike", 75.0);
+        ListaJogo fps1 = new ListaJogo("CS2", 75.0);
         ListaJogo fps2 = new ListaJogo("VALORANT", 0.0);
-        ListaJogo fps3 = new ListaJogo("RAINBOW SIX SIEGE", 95.0);
+        ListaJogo fps3 = new ListaJogo("R6", 95.0);
         fps1.adicionarCategoria(new FPS("FPS", "Jogos de tiro em primeira pessoa"));
         fps2.adicionarCategoria(new FPS("FPS", "Jogos de tiro em primeira pessoa"));
         fps3.adicionarCategoria(new FPS("FPS", "Jogos de tiro em primeira pessoa"));
@@ -45,9 +45,9 @@ public class JogosController {
         jogos.add(fps3);
 
         // RPG
-        ListaJogo rpg1 = new ListaJogo("The Witcher1", 110.0);
-        ListaJogo rpg2 = new ListaJogo("The Witcher2", 120.0);
-        ListaJogo rpg3 = new ListaJogo("The Witcher3", 130.0);
+        ListaJogo rpg1 = new ListaJogo("The Witcher 1", 110.0);
+        ListaJogo rpg2 = new ListaJogo("The Witcher 2", 120.0);
+        ListaJogo rpg3 = new ListaJogo("The Witcher 3", 130.0);
         rpg1.adicionarCategoria(new RPG("RPG", "Jogos de interpretacao de papeis"));
         rpg2.adicionarCategoria(new RPG("RPG", "Jogos de interpretacao de papeis"));
         rpg3.adicionarCategoria(new RPG("RPG", "Jogos de interpretacao de papeis"));

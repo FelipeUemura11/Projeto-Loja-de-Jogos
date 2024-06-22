@@ -8,15 +8,17 @@ public class Perfil{
     protected String nome;
     protected double saldo;
     protected Grupo grupo;
-    public List<Amigo> amigos; 
+    public List<Amigo> amigos;
+    protected List<ListaJogosComprados> comprados;
     protected List<Conquista> conquistas;
-    protected List<Desejos> desejos;
+    protected List<ListaDeDesejos> desejos;
 
     public Perfil(String nome, double saldo, Grupo grupo) {
         this.nome = nome;
         this.saldo = saldo;
         this.grupo = grupo;
         this.amigos = new ArrayList<>();
+        this.comprados = new ArrayList<>();
         this.conquistas = new ArrayList<>();
         this.desejos = new ArrayList<>();
     }
@@ -28,37 +30,20 @@ public class Perfil{
     public double getSaldo(){
         return saldo;
     }
-
-    public Grupo getGrupo(){
-        return grupo;
-    }
-
     
-    
-    public List<Conquista> getConquistas() {
-        return conquistas;
-    }
-
-    public void setConquistas(List<Conquista> conquistas) {
-        this.conquistas = conquistas;
-    }
-
-    public List<Desejos> getDesejos() {
-        return desejos;
-    }
-
-    public void setDesejos(List<Desejos> desejos) {
-        this.desejos = desejos;
-    }
-
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
 
+    public Grupo getGrupo(){
+        return grupo;
+    }
+    
     public void setGrupo(Grupo grupo) {
         this.grupo = grupo;
     }
-
+    
+    
     // Funcoes para amigo
     public List<Amigo> getAmigo(){
         return amigos;
@@ -69,7 +54,7 @@ public class Perfil{
     }
     // Funcao para remover amigo da lista de amigos
     public Amigo removerAmigo(String nome_amigo){
-
+        
         Amigo encontrado = buscarAmigo(nome_amigo);
 
         if(encontrado != null){
@@ -88,6 +73,14 @@ public class Perfil{
             System.out.println("Amigo ("+ i +"): "+amigo.getNomeAmigo());
         }
         return null;
+    }
+    // Funcao para adicionar no carrinho
+    public void adicionarCarrinho(String jogo_selecionado) {
+        comprados.add(new ListaJogosComprados(jogo_selecionado));
+    }
+    // Funcao para adicionar na lista de desejos
+    public void adicionarListaDeDesejos(String jogo_selecionado) {
+        desejos.add(new ListaDeDesejos(jogo_selecionado));
     }
     
 }

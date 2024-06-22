@@ -9,19 +9,19 @@ public class ListaDestaque {
         this.preco_destaque = preco_destaque;
     }
 
-    public String getNome_destaque() {
+    public String getNomeDestaque() {
         return nome_destaque;
     }
 
-    public void setNome_destaque(String nome_destaque) {
+    public void setNomeDestaque(String nome_destaque) {
         this.nome_destaque = nome_destaque;
     }
 
-    public double getPreco_destaque() {
+    public double getPrecoDestaque() {
         return preco_destaque;
     }
 
-    public void setPreco_destaque(double preco_destaque) {
+    public void setPrecoDestaque(double preco_destaque) {
         this.preco_destaque = preco_destaque;
     }
 

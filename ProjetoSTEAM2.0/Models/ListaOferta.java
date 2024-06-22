@@ -9,19 +9,19 @@ public class ListaOferta {
         this.preco_oferta = preco_oferta;
     }
 
-    public String getNome_oferta() {
+    public String getNomeOferta() {
         return nome_oferta;
     }
 
-    public void setNome_oferta(String nome_oferta) {
+    public void setNomeOferta(String nome_oferta) {
         this.nome_oferta = nome_oferta;
     }
 
-    public double getPreco_oferta() {
+    public double getPrecoOferta() {
         return preco_oferta;
     }
 
-    public void setPreco_oferta(double preco_oferta) {
+    public void setPrecoOferta(double preco_oferta) {
         this.preco_oferta = preco_oferta;
     }
 

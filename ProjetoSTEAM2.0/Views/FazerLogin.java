@@ -12,10 +12,10 @@ import Models.ListaJogo;
 import Models.ListaDestaque;
 import Models.ListaOferta;
 
+import Models.Cadastro;
 import Models.Amigo;
 import Models.Grupo;
 import Models.Membro;
-import Models.Cadastro;
 import Models.Comunidade;
 import Models.Visitante;
 
@@ -75,6 +75,7 @@ public class FazerLogin {
         List<ListaJogo> jogos = new ArrayList<>();
         List<ListaDestaque> destaques = new ArrayList<>();
         List<ListaOferta> ofertas = new ArrayList<>();
+
         JogosController jogos_controller = new JogosController();
         jogos_controller.jogosExistentes(jogos, destaques, ofertas); // adicao de jogos no sistema
 
@@ -340,9 +341,8 @@ public class FazerLogin {
 
                             do{
                                 System.out.println("=========== DESEJOS ===========");
-                                System.out.println(" >     1. Lista Desejos      < "); 
-                                System.out.println(" >     2. Adicionar          < "); 
-                                System.out.println(" >     3. Remover            < "); 
+                                System.out.println(" >     1. Lista Desejos      < ");
+                                System.out.println(" >     2. Remover            < "); 
                                 System.out.println(" >     0. Voltar             < "); 
                                 System.out.println();
                                 
@@ -352,13 +352,9 @@ public class FazerLogin {
                                 switch(option){
                                     case 1:
                                         System.out.println("=========== LISTA ===========");
-                                        pessoa_selecionada.getPerfil().getDesejos().toString();
                                         System.out.println("=========== LISTA ===========");
                                         break;
                                     case 2:
-                                        System.out.println(" >> ADICIONAR << ");
-                                        break;
-                                    case 3:
                                         System.out.println(" >> REMOVER << ");
                                         break;
                                     case 0:
@@ -377,7 +373,7 @@ public class FazerLogin {
 
                             System.out.println("=========== CONQUISTAS ===========");
                             System.out.println(" >     1. Lista de Conquista    < "); 
-                            System.out.println(" >     2. Adicionar             < "); 
+                            System.out.println(" >     2. Adicionar             < ");
                             System.out.println(" >     3. Remover               < "); 
                             System.out.println(" >     0. Voltar                < ");
                             System.out.println();
@@ -388,7 +384,6 @@ public class FazerLogin {
                             switch(options){
                                 case 1:
                                     System.out.println("=========== LISTA ===========");
-                                    pessoa_selecionada.getPerfil().getConquistas().toString();
                                     System.out.println("=========== LISTA ===========");
                                     break;
                                 case 2:
@@ -436,11 +431,11 @@ public class FazerLogin {
                     break;
                 case 2: // BIBLIOTECA
                     //Biblioteca biblioteca = new Biblioteca();
-                    //biblioteca.gerenciarBiblioteca(scan);
+                    //biblioteca.gerenciarBiblioteca(pessoa_selecionada);
                     break;
                 case 3: // LOJA
                     Loja loja = new Loja();
-                    loja.gerenciarLoja(jogos, destaques, ofertas);
+                    loja.gerenciarLoja(pessoa_selecionada, jogos, destaques, ofertas);
                     break;
                 case 4: // COMUNIDADE
                     Comunidade comunidade = new Comunidade();
