@@ -20,10 +20,6 @@ public class Comunidade {
     }
 
     public void exibirNoticias() {
-        if(noticias.isEmpty()){
-            System.out.println("Nenhuma noticia disponivel.");
-            return;
-        }
 
         System.out.println("=============== Noticias ===============");
         for (Noticias noticia : noticias) {
@@ -39,8 +35,7 @@ public class Comunidade {
             System.out.println("\n=============== Comunidade ===============");
             System.out.println("1. Ver Noticias");
             // 2. Ver Discussoes ---> Comentarios de pessoas influentes na comunidade falando sobre jogos
-            // 3. Ver 
-            System.out.println("2. Adicionar noticia de Jogo");
+            System.out.println("3. Adicionar opinicao sobre Jogo");
             System.out.println("0. Voltar");
             System.out.print("Escolha uma opção: ");
 
@@ -59,7 +54,7 @@ public class Comunidade {
 
                     Noticias novaNoticia = new Noticias(titulo, conteudo);
                     adicionarNoticia(novaNoticia);
-                    System.out.println("noticia adicionada com sucesso!");
+                    System.out.println("Opiniao adicionada com sucesso!");
                     break;
                 case 0:
                     break;
