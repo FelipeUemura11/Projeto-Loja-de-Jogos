@@ -6,22 +6,21 @@ import java.util.Scanner;
 
 public class Loja {
 
-    List<ListaJogo> jogos = new ArrayList<>();
     List<ListaJogo> destaques = new ArrayList<>();
     List<ListaJogo> ofertas = new ArrayList<>();
 
     Scanner scan = new Scanner(System.in);
 
-    public void gerenciarLoja(List<ListaJogo> jogos) {
+    public void gerenciarLoja(List<ListaJogo> jogos, List<ListaDestaque> destaques, List<ListaOferta> ofertas) {
 
         int opcao = -1;
 
-        while (opcao != 0 ) {
+        while(opcao != 0 ){
             System.out.println("\n=========== Loja ===========");
             System.out.println("1. Ver jogos");
             System.out.println("2. Ver Destaques");
-            System.out.println("4. Ver Ofertas");
-            System.out.println("5. Ver Carrinho");
+            System.out.println("3. Ver Ofertas");
+            System.out.println("4. Ver Carrinho");
             System.out.println("0. Voltar");
             System.out.print("Escolha uma opção: ");
 
@@ -116,19 +115,21 @@ public class Loja {
         }
     }
 
-    public void exibirDestaques(List<ListaJogo> destaques){
+    public void exibirDestaques(List<ListaDestaque> destaques){
 
         System.out.println("\n=========== DESTAQUES ===========");
-        for (ListaJogo destaque : destaques) {
+        System.out.println("\n     !!!Destaques da semana!!!\n");
+        for (ListaDestaque destaque : destaques) {
             System.out.println(destaque.toString());
             System.out.println("----------------------------------");
         }
         
     }
-    public void exibirOfertas(List<ListaJogo> ofertas) {
-
+    public void exibirOfertas(List<ListaOferta> ofertas) {
+        
         System.out.println("\n=========== OFERTAS ===========");
-        for (ListaJogo oferta : ofertas) {
+        System.out.println("\n     !!!Ofertas da semana!!!\n");
+        for (ListaOferta oferta : ofertas) {
             System.out.println(oferta.toString());
             System.out.println("----------------------------------");
         }

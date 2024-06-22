@@ -6,14 +6,18 @@ import java.util.List;
 
 import Controller.GrupoController;
 import Controller.JogosController;
+
+import Models.Loja;
+import Models.ListaJogo;
+import Models.ListaDestaque;
+import Models.ListaOferta;
+
 import Models.Amigo;
 import Models.Grupo;
-import Models.ListaJogo;
 import Models.Membro;
 import Models.Cadastro;
 import Models.Comunidade;
 import Models.Visitante;
-import Models.Loja;
 
 public class FazerLogin {
 
@@ -69,8 +73,8 @@ public class FazerLogin {
         
         // MENU PRINCIPAL
         List<ListaJogo> jogos = new ArrayList<>();
-        List<ListaJogo> destaques = new ArrayList<>();
-        List<ListaJogo> ofertas = new ArrayList<>();
+        List<ListaDestaque> destaques = new ArrayList<>();
+        List<ListaOferta> ofertas = new ArrayList<>();
         JogosController jogos_controller = new JogosController();
         jogos_controller.jogosExistentes(jogos, destaques, ofertas); // adicao de jogos no sistema
 
@@ -436,7 +440,7 @@ public class FazerLogin {
                     break;
                 case 3: // LOJA
                     Loja loja = new Loja();
-                    loja.gerenciarLoja(jogos);
+                    loja.gerenciarLoja(jogos, destaques, ofertas);
                     break;
                 case 4: // COMUNIDADE
                     Comunidade comunidade = new Comunidade();
