@@ -4,17 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Destaques {
-    private List<ListaJogo> jogos;
+    private List<ListaJogo> destaques;
 
     public Destaques() {
-        this.jogos = new ArrayList<>();
+        this.destaques = new ArrayList<>();
     }
 
-    public void adicionarJogo(ListaJogo jogo) {
-        jogos.add(jogo);
+    public void adicionarDestaque(ListaJogo destaque) {
+        destaques.add(destaque);
     }
 
     public List<ListaJogo> getJogos() {
-        return jogos;
+        return destaques;
     }
 }

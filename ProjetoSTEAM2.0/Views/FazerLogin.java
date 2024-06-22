@@ -69,7 +69,11 @@ public class FazerLogin {
         
         // MENU PRINCIPAL
         List<ListaJogo> jogos = new ArrayList<>();
+        List<ListaJogo> destaques = new ArrayList<>();
+        List<ListaJogo> ofertas = new ArrayList<>();
         JogosController jogos_controller = new JogosController();
+        jogos_controller.jogosExistentes(jogos, destaques, ofertas); // adicao de jogos no sistema
+
         int opc = -1;
         do{
             System.out.println("-=-=-=-=> Menu <=-=-=-=-");
@@ -431,7 +435,6 @@ public class FazerLogin {
                     //biblioteca.gerenciarBiblioteca(scan);
                     break;
                 case 3: // LOJA
-                    jogos_controller.jogosExistentes(jogos); // adicao de jogos no sistema
                     Loja loja = new Loja();
                     loja.gerenciarLoja(jogos);
                     break;

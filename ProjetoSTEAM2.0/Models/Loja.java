@@ -29,13 +29,13 @@ public class Loja {
             scan.nextLine();
 
             switch (opcao) {
-                case 1:
+                case 1: // lista de jogos
                     exibirJogos(jogos);
                     break;
-                case 2:
+                case 2: // lista de destaques
                     exibirDestaques(destaques);
                     break;
-                case 3:
+                case 3: // lista de ofertas
                     exibirOfertas(ofertas);
                     break;
                 case 4:
@@ -54,13 +54,64 @@ public class Loja {
     public void exibirJogos(List<ListaJogo> jogos){
         
         System.out.println("\n=========== JOGOS ===========\n");
+        System.out.println("==>[FPS]<============================================\n");
         for(ListaJogo j : jogos){
             for(Categoria c : j.getCategoria()){
-                System.out.println("==>["+c.getNomeCategoria()+"]<============================================");
-                System.out.println(c.toString()); // descricao
-                System.out.println("Nome: " + j.getTitulo());
-                System.out.println("Preco: R$" + j.getPreco());
-                System.out.println();
+                if(c.getNomeCategoria().equals("FPS")){
+                    System.out.println("Nome: " + j.getTitulo());
+                    System.out.println("Preco: R$" + j.getPreco());
+                    System.out.println();
+                }
+            }
+        }
+        System.out.println("==>[RPG]<============================================\n");
+        for(ListaJogo j : jogos){
+            for(Categoria c : j.getCategoria()){
+                if(c.getNomeCategoria().equals("RPG")){
+                    System.out.println("Nome: " + j.getTitulo());
+                    System.out.println("Preco: R$" + j.getPreco());
+                    System.out.println();
+                }
+            }
+        }
+        System.out.println("==>[Terror]<============================================\n");
+        for(ListaJogo j : jogos){
+            for(Categoria c : j.getCategoria()){
+                if(c.getNomeCategoria().equals("Terror")){
+                    System.out.println("Nome: " + j.getTitulo());
+                    System.out.println("Preco: R$" + j.getPreco());
+                    System.out.println();
+                }
+            }
+        }
+        System.out.println("==>[SoulsLike]<============================================\n");
+        for(ListaJogo j : jogos){
+            for(Categoria c : j.getCategoria()){
+                if(c.getNomeCategoria().equals("SoulsLike")){
+                    System.out.println("Nome: " + j.getTitulo());
+                    System.out.println("Preco: R$" + j.getPreco());
+                    System.out.println();
+                }
+            }
+        }
+        System.out.println("==>[Indie]<============================================\n");
+        for(ListaJogo j : jogos){
+            for(Categoria c : j.getCategoria()){
+                if(c.getNomeCategoria().equals("Indie")){
+                    System.out.println("Nome: " + j.getTitulo());
+                    System.out.println("Preco: R$" + j.getPreco());
+                    System.out.println();
+                }
+            }
+        }
+        System.out.println("==>[Plataforma]]<============================================\n");
+        for(ListaJogo j : jogos){
+            for(Categoria c : j.getCategoria()){
+                if(c.getNomeCategoria().equals("Plataforma")){
+                    System.out.println("Nome: " + j.getTitulo());
+                    System.out.println("Preco: R$" + j.getPreco());
+                    System.out.println();
+                }
             }
         }
     }
@@ -76,7 +127,7 @@ public class Loja {
     }
     public void exibirOfertas(List<ListaJogo> ofertas) {
 
-        System.out.println("\n=========== DESTAQUES ===========");
+        System.out.println("\n=========== OFERTAS ===========");
         for (ListaJogo oferta : ofertas) {
             System.out.println(oferta.toString());
             System.out.println("----------------------------------");
