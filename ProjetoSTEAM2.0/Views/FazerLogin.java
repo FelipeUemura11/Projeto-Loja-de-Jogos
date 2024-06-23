@@ -225,12 +225,12 @@ public class FazerLogin {
 
                             // LISTA DE GRUPOS EXISTENTES
                             GrupoController grupo_controller = new GrupoController();
+                            grupo_controller.gruposExistentes(grupos);
                             // GRUPO "FANTASMA" PARA O USUARIO FICAR NELE TEMPORARIAMENTE QUANDO FOR SAIR DE ALGUM GRUPO
                             Grupo nenhum = new Grupo("Nenhum", "Nenhum", 0);
                             // CLASSE MEMBRO(VISITANTE) PARA ENTRAR NO GRUPO
                             Visitante v = new Visitante(pessoa_selecionada.getPerfil().getNome(), "Calouro");
                             
-                            grupo_controller.gruposExistentes(grupos); // adicicao de grupos no sistema
                             
                             do{
                                 System.out.println("=========== Grupos =========== ");
