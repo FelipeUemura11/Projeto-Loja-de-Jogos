@@ -1,5 +1,8 @@
 package Models;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.util.List;
 import java.util.Scanner;
 
@@ -164,6 +167,19 @@ public class Loja {
                         pessoa_selecionada.getPerfil().setSaldo(pessoa_selecionada.getPerfil().getSaldo() - j.getPreco());
                         pessoa_selecionada.getPerfil().adicionarCarrinho(j.getTitulo());
                         System.out.println(" >> O jogo "+j.getTitulo()+" foi Comprado! << ");
+                        // BOLETO DA COMPRA
+                        File arquivo = new File("C:\\Users\\felip\\OneDrive\\Documents\\GitHub\\Projeto-Loja-de-Jogos\\ProjetoSTEAM2.0\\JogosComprado.txt");
+            
+                        try(BufferedWriter br = new BufferedWriter(new FileWriter(arquivo))){
+                            br.write("=============================\n");
+                            br.write("Nome: "+pessoa_selecionada.getPerfil().getNome()+ "\n");
+                            br.write("Email: "+pessoa_selecionada.getEmail()+ "\n");
+                            br.write("Jogo comprado: "+j.getTitulo()+ "\n");
+                            br.write("Preco pago pelo jogo: "+j.getPreco()+ "\n");
+                            br.write("----------------------------\n");
+                        }catch(Exception e){
+                            e.printStackTrace();
+                        }
                         break;
                     }else{
                         System.out.println(" >> Sem saldo na conta! << ");
@@ -228,7 +244,7 @@ public class Loja {
             }
         }
         if(!encontrado){
-            System.out.println(" >> Jogo nAo encontrado! << ");
+            System.out.println(" >> Jogo nao encontrado! << ");
         }
     }
     private void desejarJogo(Cadastro pessoa_selecionada, List<ListaJogo> jogos, List<ListaDestaque> destaques, List<ListaOferta> ofertas) {

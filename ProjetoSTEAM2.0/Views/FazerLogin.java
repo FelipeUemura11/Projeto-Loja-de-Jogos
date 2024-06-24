@@ -28,7 +28,6 @@ public class FazerLogin {
     public void funcaoFazerLogin(List<Cadastro> pessoa){
 
         Cadastro pessoa_selecionada = null;
-
         // EMAIL
         String email = "";
         boolean emailVerificado = false;
@@ -229,7 +228,6 @@ public class FazerLogin {
                         case 4: // GRUPOS
 
                             int op = -1;
-
                             // GRUPO "FANTASMA" PARA O USUARIO FICAR NELE TEMPORARIAMENTE QUANDO FOR SAIR DE ALGUM GRUPO
                             Grupo nenhum = new Grupo("Nenhum", "Nenhum", 0);
                             // CLASSE MEMBRO(VISITANTE) PARA ENTRAR NO GRUPO

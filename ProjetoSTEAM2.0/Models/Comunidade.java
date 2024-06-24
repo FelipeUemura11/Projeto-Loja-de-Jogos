@@ -10,7 +10,7 @@ public class Comunidade {
     public Comunidade() {
         noticias = new ArrayList<>();
         // Adicionando algumas Noticias de exemplo
-        noticias.add(new Noticias("Novo jogo de RPG lancado!", "Um novo RPG revolucionário acaba de ser lançado, trazendo gráficos impressionantes e uma história envolvente."));
+        noticias.add(new Noticias("Novo jogo de RPG lancado!", "Um novo RPG revolucionário acaba de ser lancado, trazendo graficos impressionantes e uma historia envolvente."));
         noticias.add(new Noticias("Atualização massiva para jogo de estratégia!", "Uma nova atualização para o jogo de estratégia mais popular do ano foi lançada, trazendo novos mapas, unidades e modos de jogo."));
         noticias.add(new Noticias("Entrevista com desenvolvedor de jogo indie!", "Conversamos com o desenvolvedor por trás do mais novo jogo indie aclamado pela crítica, discutindo o processo de criação e os desafios enfrentados."));
     }
@@ -35,7 +35,7 @@ public class Comunidade {
             System.out.println("\n=============== Comunidade ===============");
             System.out.println("1. Ver Noticias");
             // 2. Ver Discussoes ---> Comentarios de pessoas influentes na comunidade falando sobre jogos
-            System.out.println("3. Adicionar opinicao sobre Jogo");
+            System.out.println("3. Adicionar opiniao sobre Jogo");
             System.out.println("0. Voltar");
             System.out.print("Escolha uma opção: ");
 
@@ -47,9 +47,9 @@ public class Comunidade {
                     exibirNoticias();
                     break;
                 case 2:
-                    System.out.print("Digite o título da noticia: ");
+                    System.out.print("Digite o titulo da noticia: ");
                     String titulo = scanner.nextLine();
-                    System.out.print("Digite o conteúdo da noticia: ");
+                    System.out.print("Digite o conteudo da noticia: ");
                     String conteudo = scanner.nextLine();
 
                     Noticias novaNoticia = new Noticias(titulo, conteudo);

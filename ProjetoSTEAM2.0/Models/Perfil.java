@@ -42,9 +42,43 @@ public class Perfil{
     public void setGrupo(Grupo grupo) {
         this.grupo = grupo;
     }
-
+    // DESEJOS
     public List<ListaDeDesejos> getDesejos() {
         return desejos;
+    }
+    public void listarDesejos(){
+        int i = 0;
+        for(ListaDeDesejos l : desejos){
+            i++;
+            System.out.println("Desejo (" + i + "): "+ l.getNomeDesejo());
+        }
+    }
+    public void removerDesejo(String nome_desejo){
+        boolean encontrado = false;
+        for(ListaDeDesejos l : desejos){
+            if(l.getNomeDesejo().equals(nome_desejo)){
+                desejos.remove(l);
+                System.out.println(" >> Desejo removido! << ");
+                encontrado = true;
+                break;
+            }
+        }
+        if(!encontrado){
+            System.out.println(" >> Item nao foi encontrado! << ");
+        }
+    }
+    public void buscarDesejo(String nome_desejo){
+        boolean encontrado = false;
+        for(ListaDeDesejos l : desejos){
+            if(l.getNomeDesejo().equals(nome_desejo)){
+                System.out.println(" >> Item encontrado na lista de desejos - [" + l.getNomeDesejo() + "] << ");
+                encontrado = true;
+                break;
+            }
+        }
+        if(!encontrado){
+            System.out.println(" >> Item nao foi encontrado! << ");
+        }
     }
     // ADICAO DE CONQUISTAS
     public List<ListaConquista> getConquistas() {

@@ -25,7 +25,7 @@ public class Biblioteca{
                     funcaoJogo(pessoa_selecionada);
                     break;
                 case 2:
-                    // funcaoDesejo();
+                    funcaoDesejo(pessoa_selecionada);
                     break;
                 case 0:
                     break;
@@ -68,6 +68,46 @@ public class Biblioteca{
                     System.out.print("Informe o nome do jogo que deseja buscar: ");
                     String buscar = scan.nextLine();
                     pessoa_selecionada.getPerfil().buscarJogo(buscar);
+                case 0:
+                    break;
+                default:
+                    System.out.println("---------------------------------------");
+                    System.out.println(" >> Opcao Invalida! << ");
+                    break;
+            }
+        }
+    }
+    public void funcaoDesejo(Cadastro pessoa_selecionada){
+
+        int opcao = -1;
+
+        while(opcao != 0){
+            System.out.println("\n===== Desejos =====");
+            System.out.println("1. Listar meus Desejos");
+            System.out.println("2. Remover Desejo");
+            System.out.println("3. Buscar Desejo");
+            System.out.println("0. Voltar");
+            System.out.print("Escolha uma opcao: ");
+            
+            opcao = scan.nextInt();
+            scan.nextLine();
+            
+            switch (opcao) {
+                case 1:
+                    System.out.println(" >> LISTA DE DESEJOS << ");
+                    pessoa_selecionada.getPerfil().listarDesejos();
+                    break;
+                case 2:
+                    System.out.println(" >> REMOVER DESEJOS << ");
+                    System.out.print("Informe o nome do jogo que deseje remover: ");
+                    String remover_desejo = scan.nextLine();
+                    pessoa_selecionada.getPerfil().removerDesejo(remover_desejo);
+                    break;
+                case 3:
+                    System.out.println(" >> BUSCAR DESEJOS << ");
+                    System.out.print("Informe o nome do jogo que deseja buscar: ");
+                    String buscar_desejo = scan.nextLine();
+                    pessoa_selecionada.getPerfil().buscarDesejo(buscar_desejo);
                 case 0:
                     break;
                 default:
