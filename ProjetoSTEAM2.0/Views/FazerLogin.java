@@ -353,10 +353,10 @@ public class FazerLogin {
 
                             switch(options){
                                 case 1:
-                                    System.out.println("=========== LISTA ===========");
+                                    System.out.println("=========== MINHAS CONQUISTAS ===========");
                                     pessoa_selecionada.getPerfil().listarConquistas();
                                     System.out.println();
-                                    System.out.println("=========== LISTA ===========");
+                                    System.out.println("=========== MINHAS CONQUISTAS ===========");
                                     break;
                                 case 2:
                                     System.out.println(" >> ADICIONAR << ");
@@ -366,7 +366,10 @@ public class FazerLogin {
                                     System.out.print("Informe a descricao da conquista: ");
                                     String desc_conquista = scan.nextLine();
 
-                                    pessoa_selecionada.getPerfil().adicionarConquista(titulo, desc_conquista);
+                                    System.out.print("Informe o jogo a que essa conquista se refere: ");
+                                    String jogo = scan.nextLine();
+
+                                    pessoa_selecionada.getPerfil().adicionarConquista(titulo, desc_conquista, jogo);
                                     System.out.println(" >> CONQUISTA ADICIONADA! <<");
                                     break;
                                 case 0:

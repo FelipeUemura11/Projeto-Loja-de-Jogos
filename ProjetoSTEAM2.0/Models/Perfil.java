@@ -84,13 +84,13 @@ public class Perfil{
     public List<ListaConquista> getConquistas() {
         return conquistas;
     }
-    public void adicionarConquista(String titulo, String desc_conquista){
-        conquistas.add(new ListaConquista(titulo, desc_conquista));
+    public void adicionarConquista(String titulo, String desc_conquista, String jogo){
+        conquistas.add(new ListaConquista(titulo, desc_conquista, jogo));
     }
 
     public void listarConquistas(){
         for(ListaConquista c : conquistas){
-            System.out.println("\n >> Titulo: " + c.getTituloConquista() + "\n >> Descricao: "+ c.getDesc_conquista());
+            System.out.println("\n >> Titulo: " + c.getTituloConquista() + "\n >> Descricao: "+ c.getDesc_conquista() + "\n >> Jogo: "+ c.getJogo());
         }
     }
 
