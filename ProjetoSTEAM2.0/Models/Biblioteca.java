@@ -22,10 +22,10 @@ public class Biblioteca{
             
             switch (opc) {
                 case 1:
-                    
+                    funcaoJogo(pessoa_selecionada);
                     break;
                 case 2:
-                    
+                    // funcaoDesejo();
                     break;
                 case 0:
                     break;
@@ -36,7 +36,9 @@ public class Biblioteca{
             }
         }while(opc != 0);
 
-        public void funcaoJogo()
+    }
+    public void funcaoJogo(Cadastro pessoa_selecionada){
+
         int opcao = -1;
 
         while(opcao != 0){
@@ -56,7 +58,6 @@ public class Biblioteca{
                     System.out.println(pessoa_selecionada.getPerfil().listarJogos());
                     break;
                 case 2:
-                    boolean encontrado = false;
                     System.out.println(" >> REEMBOLSAR JOGO << ");
                     System.out.print("Informe o nome do jogo que deseja reembolsar: ");
                     String reembolsar = scan.nextLine();

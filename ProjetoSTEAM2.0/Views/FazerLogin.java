@@ -4,6 +4,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
 
+import Controller.ConquistasController;
 import Controller.GrupoController;
 import Controller.JogosController;
 
@@ -80,6 +81,12 @@ public class FazerLogin {
 
         JogosController jogos_controller = new JogosController();
         jogos_controller.jogosExistentes(jogos, destaques, ofertas); // adicao de jogos no sistema
+
+        ConquistasController conquista_controller = new ConquistasController();
+        conquista_controller.conquistasExistentes(pessoa_selecionada); // adicao de conquistas
+
+        GrupoController grupo_controller = new GrupoController();
+        grupo_controller.gruposExistentes(grupos); // adicao de grupos
 
         int opc = -1;
         do{
@@ -223,9 +230,6 @@ public class FazerLogin {
 
                             int op = -1;
 
-                            // LISTA DE GRUPOS EXISTENTES
-                            GrupoController grupo_controller = new GrupoController();
-                            grupo_controller.gruposExistentes(grupos);
                             // GRUPO "FANTASMA" PARA O USUARIO FICAR NELE TEMPORARIAMENTE QUANDO FOR SAIR DE ALGUM GRUPO
                             Grupo nenhum = new Grupo("Nenhum", "Nenhum", 0);
                             // CLASSE MEMBRO(VISITANTE) PARA ENTRAR NO GRUPO
@@ -339,26 +343,33 @@ public class FazerLogin {
 
                             int options = -1;    
 
-                            System.out.println("=========== CONQUISTAS ===========");
+                            System.out.println("\n=========== CONQUISTAS ===========");
                             System.out.println(" >     1. Lista de Conquista    < "); 
-                            System.out.println(" >     2. Adicionar             < ");
-                            System.out.println(" >     3. Remover               < "); 
+                            System.out.println(" >     2. Adicionar Conquista   < ");
                             System.out.println(" >     0. Voltar                < ");
                             System.out.println();
 
-                            System.out.println("Escolha uma das opcoes: ");
+                            System.out.print("Escolha uma das opcoes: ");
                             options = scan.nextInt();
+                            scan.nextLine();
 
                             switch(options){
                                 case 1:
                                     System.out.println("=========== LISTA ===========");
+                                    pessoa_selecionada.getPerfil().listarConquistas();
+                                    System.out.println();
                                     System.out.println("=========== LISTA ===========");
                                     break;
                                 case 2:
                                     System.out.println(" >> ADICIONAR << ");
-                                    break;
-                                case 3:
-                                    System.out.println(" >> REMOVER << ");
+                                    System.out.print("Informe o titulo da conquista: ");
+                                    String titulo = scan.nextLine();
+
+                                    System.out.print("Informe a descricao da conquista: ");
+                                    String desc_conquista = scan.nextLine();
+
+                                    pessoa_selecionada.getPerfil().adicionarConquista(titulo, desc_conquista);
+                                    System.out.println(" >> CONQUISTA ADICIONADA! <<");
                                     break;
                                 case 0:
                                     break;

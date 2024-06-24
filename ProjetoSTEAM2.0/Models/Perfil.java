@@ -11,7 +11,7 @@ public class Perfil{
     public List<Amigo> amigos;
     protected List<ListaJogosComprados> comprados;
     protected List<ListaDeDesejos> desejos;
-    protected List<Conquista> conquistas;
+    public List<ListaConquista> conquistas;
 
     public Perfil(String nome, double saldo, Grupo grupo) {
         this.nome = nome;
@@ -46,13 +46,18 @@ public class Perfil{
     public List<ListaDeDesejos> getDesejos() {
         return desejos;
     }
-
-    public List<Conquista> getConquistas() {
+    // ADICAO DE CONQUISTAS
+    public List<ListaConquista> getConquistas() {
         return conquistas;
     }
+    public void adicionarConquista(String titulo, String desc_conquista){
+        conquistas.add(new ListaConquista(titulo, desc_conquista));
+    }
 
-    public void setConquistas(List<Conquista> conquistas) {
-        this.conquistas = conquistas;
+    public void listarConquistas(){
+        for(ListaConquista c : conquistas){
+            System.out.println("\n >> Titulo: " + c.getTituloConquista() + "\n >> Descricao: "+ c.getDesc_conquista());
+        }
     }
 
     // Funcoes para amigo
