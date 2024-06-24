@@ -19,7 +19,7 @@ public class Loja {
             System.out.println("4. Comprar jogo");
             System.out.println("5. Adicionar desejo");
             System.out.println("0. Voltar");
-            System.out.print("Escolha uma opção: ");
+            System.out.print("Escolha uma opcao: ");
 
             opcao = scan.nextInt();
             scan.nextLine();

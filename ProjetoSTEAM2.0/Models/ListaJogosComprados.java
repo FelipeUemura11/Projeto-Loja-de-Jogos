@@ -2,22 +2,22 @@ package Models;
 
 public class ListaJogosComprados{
 
-    private String comprados;
+    private String comprado;
 
-    public ListaJogosComprados(String comprados) {
-        this.comprados = comprados;
+    public ListaJogosComprados(String comprado) {
+        this.comprado = comprado;
     }
 
     public String getComprados() {
-        return comprados;
+        return comprado;
     }
 
-    public void setComprados(String comprados) {
-        this.comprados = comprados;
+    public void setComprados(String comprado) {
+        this.comprado = comprado;
     }
 
     @Override
     public String toString() {
-        return "Comprado: " + comprados;
+        return " - "+comprado;
     } 
 }

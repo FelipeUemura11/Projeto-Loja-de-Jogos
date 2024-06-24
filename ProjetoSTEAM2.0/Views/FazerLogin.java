@@ -16,8 +16,9 @@ import Models.Cadastro;
 import Models.Amigo;
 import Models.Grupo;
 import Models.Membro;
-import Models.Comunidade;
 import Models.Visitante;
+import Models.Comunidade;
+import Models.Biblioteca;
 
 public class FazerLogin {
 
@@ -105,9 +106,8 @@ public class FazerLogin {
                     System.out.println(" >  2. Minha Carteira     < ");
                     System.out.println(" >  3. Amigos             < ");
                     System.out.println(" >  4. Grupos             < ");
-                    System.out.println(" >  5. Desejos            < ");
-                    System.out.println(" >  6. Conquistas         < ");
-                    System.out.println(" >  7. Deletar Conta      < ");
+                    System.out.println(" >  5. Conquistas         < ");
+                    System.out.println(" >  6. Deletar Conta      < ");
                     System.out.println(" >  0. Voltar ao Menu     < ");
                     System.out.println();
                     
@@ -335,39 +335,7 @@ public class FazerLogin {
                                     }
                                 }while(op != 0);
                             break;
-                        case 5: // DESEJOS
-
-                            int option = -1;
-
-                            do{
-                                System.out.println("=========== DESEJOS ===========");
-                                System.out.println(" >     1. Lista Desejos      < ");
-                                System.out.println(" >     2. Remover            < "); 
-                                System.out.println(" >     0. Voltar             < "); 
-                                System.out.println();
-                                
-                                System.out.println("Escolha uma das opcoes: ");
-                                option = scan.nextInt();
-
-                                switch(option){
-                                    case 1:
-                                        System.out.println("=========== LISTA ===========");
-                                        System.out.println("=========== LISTA ===========");
-                                        break;
-                                    case 2:
-                                        System.out.println(" >> REMOVER << ");
-                                        break;
-                                    case 0:
-                                        break;
-                                    default:
-                                        System.out.println("---------------------------------------");
-                                        System.out.println(" >> Opcao Invalida! Tente novamente << ");
-                                        break;
-                                }
-                            
-                            }while(option != 0);
-                            break;
-                        case 6: // CONQUISTAS
+                        case 5: // CONQUISTAS
 
                             int options = -1;    
 
@@ -400,7 +368,7 @@ public class FazerLogin {
                                     break;
                             }
                             break;
-                        case 7: // DELETAR CONTA
+                        case 6: // DELETAR CONTA
 
                             Login login = new Login();
 
@@ -430,8 +398,8 @@ public class FazerLogin {
                 };
                     break;
                 case 2: // BIBLIOTECA
-                    //Biblioteca biblioteca = new Biblioteca();
-                    //biblioteca.gerenciarBiblioteca(pessoa_selecionada);
+                    Biblioteca biblioteca = new Biblioteca();
+                    biblioteca.gerenciarBiblioteca(pessoa_selecionada);
                     break;
                 case 3: // LOJA
                     Loja loja = new Loja();
