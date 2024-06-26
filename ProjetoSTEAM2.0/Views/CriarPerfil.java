@@ -53,6 +53,7 @@ public class CriarPerfil {
             try(BufferedWriter br = new BufferedWriter(new FileWriter(arquivo))) {
                     br.write(" >> Nome: "+nome+ "\n");
                     br.write(" >> Email: "+email+ "\n");
+                    br.close();
             } catch (Exception e) {
                     e.printStackTrace();
             }

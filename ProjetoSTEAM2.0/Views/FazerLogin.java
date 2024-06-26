@@ -130,7 +130,7 @@ public class FazerLogin {
                         case 2: // MINHA CARTEIRA
                             System.out.println("\n============ SALDO ============");
                             System.out.println(" >> Seu saldo: R$"+pessoa_selecionada.getPerfil().getSaldo());
-                            System.out.println(" >> Deseje adicionar dinheiro? << ");
+                            System.out.println(" >> Deseja adicionar dinheiro? << ");
                             System.out.println(" >>      SIM[1]    NAO[2]      << ");
                             int sim_nao = scan.nextInt();
 
@@ -344,7 +344,7 @@ public class FazerLogin {
 
                             System.out.println("\n=========== CONQUISTAS ===========");
                             System.out.println(" >     1. Lista de Conquista    < "); 
-                            System.out.println(" >     2. Adicionar Conquista   < ");
+                            System.out.println(" >     2. Add nova Conquista    < ");
                             System.out.println(" >     0. Voltar                < ");
                             System.out.println();
 
