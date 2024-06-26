@@ -59,15 +59,17 @@ public class Biblioteca{
                     break;
                 case 2:
                     System.out.println(" >> REEMBOLSAR JOGO << ");
+                    System.out.println(" >> Saldo Atual: "+pessoa_selecionada.getPerfil().getSaldo());
                     System.out.print("Informe o nome do jogo que deseja reembolsar: ");
                     String reembolsar = scan.nextLine();
                     pessoa_selecionada.getPerfil().removerJogo(reembolsar);
+                    
                     break;
                 case 3:
                     System.out.println(" >> BUSCAR JOGO << ");
                     System.out.print("Informe o nome do jogo que deseja buscar: ");
                     String buscar = scan.nextLine();
-                    pessoa_selecionada.getPerfil().buscarJogo(buscar);
+                    System.out.println(" >> Jogo buscado:" + pessoa_selecionada.getPerfil().buscarJogo(buscar));
                 case 0:
                     break;
                 default:

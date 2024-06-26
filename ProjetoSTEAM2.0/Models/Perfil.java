@@ -139,6 +139,8 @@ public class Perfil{
         ListaJogosComprados encontrado = buscarJogo(nome_jogo);
         
         if(encontrado != null){
+            setSaldo(getSaldo() + encontrado.getPreco());
+            System.out.println(" >> Saldo Atualizado!: "+getSaldo());
             comprados.remove(encontrado);
         }else{
             System.out.println(" >> Jogo nao econtrado! << ");
@@ -156,8 +158,8 @@ public class Perfil{
         return null;
     }
     // Funcao para adicionar no carrinho
-    public void adicionarCarrinho(String jogo_selecionado) {
-        comprados.add(new ListaJogosComprados(jogo_selecionado));
+    public void adicionarCarrinho(String jogo_selecionado, double preco_selecionado) {
+        comprados.add(new ListaJogosComprados(jogo_selecionado, preco_selecionado));
     }
     // Funcao para adicionar na lista de desejos
     public void adicionarListaDeDesejos(String jogo_selecionado) {

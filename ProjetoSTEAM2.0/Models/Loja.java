@@ -169,8 +169,9 @@ public class Loja {
                 if(escolha == 1){
                     if(pessoa_selecionada.getPerfil().getSaldo() >= j.getPreco()){
                         pessoa_selecionada.getPerfil().setSaldo(pessoa_selecionada.getPerfil().getSaldo() - j.getPreco());
-                        pessoa_selecionada.getPerfil().adicionarCarrinho(j.getTitulo());
+                        pessoa_selecionada.getPerfil().adicionarCarrinho(j.getTitulo(), j.getPreco());
                         System.out.println(" >> O jogo "+j.getTitulo()+" foi Comprado! << ");
+                        System.out.println(" >> Saldo atualizado "+pessoa_selecionada.getPerfil().getSaldo()+"<< ");
                         // BOLETO DA COMPRA
                         File arquivo = new File("C:\\Users\\felip\\OneDrive\\Documents\\GitHub\\Projeto-Loja-de-Jogos\\ProjetoSTEAM2.0\\JogosComprado.txt");
             
@@ -208,8 +209,9 @@ public class Loja {
                 if(escolha == 1){
                     if(pessoa_selecionada.getPerfil().getSaldo() >= d.getPrecoDestaque()){
                         pessoa_selecionada.getPerfil().setSaldo(pessoa_selecionada.getPerfil().getSaldo() - d.getPrecoDestaque());
-                        pessoa_selecionada.getPerfil().adicionarCarrinho(d.getNomeDestaque());
+                        pessoa_selecionada.getPerfil().adicionarCarrinho(d.getNomeDestaque(), d.getPrecoDestaque());
                         System.out.println(" >> O jogo "+d.getNomeDestaque()+" foi Comprado! << ");
+                        System.out.println(" >> Saldo atualizado "+pessoa_selecionada.getPerfil().getSaldo()+"<< ");
                         break;
                     }else{
                         System.out.println(" >> Sem saldo na conta! << ");
@@ -234,8 +236,9 @@ public class Loja {
                 if(escolha == 1){
                     if(pessoa_selecionada.getPerfil().getSaldo() >= o.getPrecoOferta()){
                         pessoa_selecionada.getPerfil().setSaldo(pessoa_selecionada.getPerfil().getSaldo() - o.getPrecoOferta());
-                        pessoa_selecionada.getPerfil().adicionarCarrinho(o.getNomeOferta());
+                        pessoa_selecionada.getPerfil().adicionarCarrinho(o.getNomeOferta(), o.getPrecoOferta());
                         System.out.println(" >> O jogo "+o.getNomeOferta()+" foi Comprado! << ");
+                        System.out.println(" >> Saldo atualizado "+pessoa_selecionada.getPerfil().getSaldo()+"<< ");
                         break;
                     }else{
                         System.out.println(" >> Sem saldo na conta! << ");
