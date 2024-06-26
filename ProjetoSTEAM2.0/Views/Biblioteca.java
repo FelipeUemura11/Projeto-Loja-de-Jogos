@@ -1,6 +1,8 @@
-package Models;
+package Views;
 
 import java.util.Scanner;
+
+import Models.Cadastro;
 
 public class Biblioteca{
 

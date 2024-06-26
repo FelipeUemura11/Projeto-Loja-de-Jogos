@@ -1,8 +1,11 @@
-package Models;
+package Views;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+import Models.Discussao;
+import Models.Noticias;
 
 public class Comunidade {
     private List<Noticias> noticias;

@@ -1,10 +1,16 @@
-package Models;
+package Views;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.List;
 import java.util.Scanner;
+
+import Models.Cadastro;
+import Models.Categoria;
+import Models.ListaDestaque;
+import Models.ListaJogo;
+import Models.ListaOferta;
 
 public class Loja {
 

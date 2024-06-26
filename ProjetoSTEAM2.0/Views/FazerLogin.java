@@ -8,7 +8,6 @@ import Controller.ConquistasController;
 import Controller.GrupoController;
 import Controller.JogosController;
 
-import Models.Loja;
 import Models.ListaJogo;
 import Models.ListaDestaque;
 import Models.ListaOferta;
@@ -18,8 +17,6 @@ import Models.Amigo;
 import Models.Grupo;
 import Models.Membro;
 import Models.Visitante;
-import Models.Comunidade;
-import Models.Biblioteca;
 
 public class FazerLogin {
 
