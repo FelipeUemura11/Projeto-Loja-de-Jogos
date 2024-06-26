@@ -51,14 +51,13 @@ public class CriarPerfil {
             File arquivo = new File("C:\\Users\\felip\\OneDrive\\Documents\\GitHub\\Projeto-Loja-de-Jogos\\ProjetoSTEAM2.0\\CadastroPessoas.txt");
 
             try(BufferedWriter br = new BufferedWriter(new FileWriter(arquivo))) {
-                    br.write("Nome: "+nome+ "\n");
-                    br.write("Email: "+email+ "\n");
+                    br.write(" >> Nome: "+nome+ "\n");
+                    br.write(" >> Email: "+email+ "\n");
             } catch (Exception e) {
                     e.printStackTrace();
             }
         }else{
             System.out.println("\n >> ERRO : Nao foi possivel adicionar usuario. << ");
         }
-    }   
+    }
 }
-
