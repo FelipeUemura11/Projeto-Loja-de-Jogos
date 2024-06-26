@@ -12,16 +12,16 @@ public class Comunidade {
         noticias = new ArrayList<>();
         discussoes = new ArrayList<>();
         // Adicionando algumas Noticias de exemplo
-        noticias.add(new Noticias("Tectoy revela linha Zeenix com PC portátil, periféricos e mais", "A Tectoy anunciou sua nova linha de produtos Zeenix, incluindo um PC portátil inovador e uma variedade de periféricos de alta performance."));
-        noticias.add(new Noticias("Elden Ring: Diminuir dificuldade 'quebraria o jogo', na opinião do criador", "O criador de Elden Ring afirmou que reduzir a dificuldade do jogo comprometeria a experiência pretendida, mantendo-se firme na decisão de manter o desafio."));
-        noticias.add(new Noticias("Resident Evil original pode ser lançado para PC em breve", "Rumores indicam que o clássico Resident Evil original está prestes a ser relançado para PC, trazendo nostalgia e terror para uma nova geração de jogadores."));
-        noticias.add(new Noticias("LoL receberá modo de jogo PvE em julho", "League of Legends está programado para receber um novo modo de jogo PvE em julho, oferecendo uma nova experiência de jogo para os fãs da série."));
+        noticias.add(new Noticias("Tectoy revela linha Zeenix com PC portatil, perifericos e mais", "A Tectoy anunciou sua nova linha de produtos Zeenix, incluindo um PC portatil inovador e uma variedade de perifericos de alta performance."));
+        noticias.add(new Noticias("Elden Ring: Diminuir dificuldade 'quebraria o jogo', na opiniao do criador", "O criador de Elden Ring afirmou que reduzir a dificuldade do jogo comprometeria a experiencia pretendida, mantendo-se firme na decisao de manter o desafio."));
+        noticias.add(new Noticias("Resident Evil original pode ser lançado para PC em breve", "Rumores indicam que o classico Resident Evil original esta prestes a ser relançado para PC, trazendo nostalgia e terror para uma nova geracao de jogadores."));
+        noticias.add(new Noticias("LoL recebera modo de jogo PvE em julho", "League of Legends esta programado para receber um novo modo de jogo PvE em julho, oferecendo uma nova experiencia de jogo para os fas da serie."));
         
         // Adicionando algumas Discussoes de exemplo
-        discussoes.add(new Discussao("Sucesso de ‘Palworld’ abre discussão sobre plágio nos games", "O sucesso de ‘Palworld’ tem levantado questões sobre plágio no mundo dos games. O que vocês acham?"));
-        discussoes.add(new Discussao("Jogos de Nintendo Switch finalmente sendo traduzidos? Vc concorda ou não", "Muitos jogos de Nintendo Switch estão sendo traduzidos para diversos idiomas. Vocês concordam com essa prática?"));
-        discussoes.add(new Discussao("Playstation, Xbox, Switch ou PC? Qual eu devo escolher?", "Estou pensando em comprar um novo console ou PC para jogos. Qual vocês recomendam e por quê?"));
-        discussoes.add(new Discussao("Qual é o melhor jogo de 2024 até agora na sua opinião?", "Até agora, qual jogo lançado em 2024 vocês consideram o melhor?"));
+        discussoes.add(new Discussao("Sucesso de 'Palworld' abre discussão sobre plagio nos games", "O sucesso de 'Palworld' tem levantado questoes sobre plagio no mundo dos games. O que voces acham?"));
+        discussoes.add(new Discussao("Jogos de Nintendo Switch finalmente sendo traduzidos? Vc concorda ou nao", "Muitos jogos de Nintendo Switch estao sendo traduzidos para diversos idiomas. Vocês concordam com essa pratica?"));
+        discussoes.add(new Discussao("Playstation, Xbox, Switch ou PC? Qual eu devo escolher?", "Estou pensando em comprar um novo console ou PC para jogos. Qual vocês recomendam e por que?"));
+        discussoes.add(new Discussao("Qual e o melhor jogo de 2024 até agora na sua opiniao?", "Ate agora, qual jogo lançado em 2024 voces consideram o melhor?"));
     }
 
     public void adicionarNoticia(Noticias noticia) {
@@ -69,7 +69,7 @@ public class Comunidade {
             System.out.println("3. Adicionar noticia de Jogo");
             System.out.println("4. Adicionar Discussao");
             System.out.println("0. Voltar");
-            System.out.print("Escolha uma opção: ");
+            System.out.print("Escolha uma opcao: ");
 
             opcao = scanner.nextInt();
             scanner.nextLine(); // Limpar buffer
@@ -84,22 +84,22 @@ public class Comunidade {
                 case 3:
                     System.out.print("Digite o título da noticia: ");
                     String tituloNoticia = scanner.nextLine();
-                    System.out.print("Digite o conteúdo da noticia: ");
+                    System.out.print("Digite o conteudo da noticia: ");
                     String conteudoNoticia = scanner.nextLine();
 
                     Noticias novaNoticia = new Noticias(tituloNoticia, conteudoNoticia);
                     adicionarNoticia(novaNoticia);
-                    System.out.println(" >> Notícia adicionada com sucesso! << ");
+                    System.out.println(" >> Noticia adicionada com sucesso! << ");
                     break;
                 case 4:
-                    System.out.print("Digite o título da discussao: ");
+                    System.out.print("Digite o titulo da discussao: ");
                     String tituloDiscussao = scanner.nextLine();
                     System.out.print("Digite a descrição da discussao: ");
                     String descricaoDiscussao = scanner.nextLine();
 
                     Discussao novadiscussao = new Discussao(tituloDiscussao, descricaoDiscussao);
                     adicionarDiscussao(novadiscussao);
-                    System.out.println(" >> Discussão adicionada com sucesso! << ");
+                    System.out.println(" >> Discussao adicionada com sucesso! << ");
                     break;
                 case 0:
                     break;
