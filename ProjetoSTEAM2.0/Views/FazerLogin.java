@@ -130,7 +130,8 @@ public class FazerLogin {
                         case 2: // MINHA CARTEIRA
                             System.out.println("\n============ SALDO ============");
                             System.out.println(" >> Seu saldo: R$"+pessoa_selecionada.getPerfil().getSaldo());
-                            System.out.print(" >> Deseje adicionar dinheiro? sim(1) / nao(2): ");
+                            System.out.println(" >> Deseje adicionar dinheiro? << ");
+                            System.out.println(" >>      SIM[1]    NAO[2]      << ");
                             int sim_nao = scan.nextInt();
 
                             if(sim_nao == 1){
