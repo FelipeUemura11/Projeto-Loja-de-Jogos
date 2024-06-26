@@ -51,15 +51,16 @@ public class Loja {
                     break;
             }
         }
-    }
-
-    
-    
+    } 
     
     public void exibirJogos(List<ListaJogo> jogos){
         
-        System.out.println("\n         >> JOGOS <<         \n");
-        System.out.println("==>[FPS]<============================================\n");
+        System.out.println("========================================");
+        System.out.println("\n             >> JOGOS <<            \n");
+        
+        ListaJogo list = new ListaJogo(null, 0);
+        list.verCategoria();
+        System.out.println("==>[FPS]<======================\n");
         for(ListaJogo j : jogos){
             for(Categoria c : j.getCategoria()){
                 if(c.getNomeCategoria().equals("FPS")){
@@ -69,7 +70,7 @@ public class Loja {
                 }
             }
         }
-        System.out.println("==>[RPG]<============================================\n");
+        System.out.println("==>[RPG]<======================\n");
         for(ListaJogo j : jogos){
             for(Categoria c : j.getCategoria()){
                 if(c.getNomeCategoria().equals("RPG")){
@@ -79,7 +80,7 @@ public class Loja {
                 }
             }
         }
-        System.out.println("==>[Terror]<============================================\n");
+        System.out.println("==>[Terror]<======================\n");
         for(ListaJogo j : jogos){
             for(Categoria c : j.getCategoria()){
                 if(c.getNomeCategoria().equals("Terror")){
@@ -89,7 +90,7 @@ public class Loja {
                 }
             }
         }
-        System.out.println("==>[SoulsLike]<============================================\n");
+        System.out.println("==>[SoulsLike]<======================\n");
         for(ListaJogo j : jogos){
             for(Categoria c : j.getCategoria()){
                 if(c.getNomeCategoria().equals("SoulsLike")){
@@ -99,7 +100,7 @@ public class Loja {
                 }
             }
         }
-        System.out.println("==>[Indie]<============================================\n");
+        System.out.println("==>[Indie]<======================\n");
         for(ListaJogo j : jogos){
             for(Categoria c : j.getCategoria()){
                 if(c.getNomeCategoria().equals("Indie")){
@@ -109,7 +110,7 @@ public class Loja {
                 }
             }
         }
-        System.out.println("==>[Plataforma]]<============================================\n");
+        System.out.println("==>[Plataforma]]<======================\n");
         for(ListaJogo j : jogos){
             for(Categoria c : j.getCategoria()){
                 if(c.getNomeCategoria().equals("Plataforma")){
@@ -121,10 +122,13 @@ public class Loja {
         }
     }
 
+
+
+
     public void exibirDestaques(List<ListaDestaque> destaques){
 
         System.out.println("\n=========== DESTAQUES ===========");
-        System.out.println("\n     !!!Destaques da semana!!!\n");
+        System.out.println("\n    >>> Destaques da semana <<<\n");
         System.out.println("----------------------------------");
         for (ListaDestaque destaque : destaques) {
             System.out.println(destaque.toString());
@@ -135,7 +139,7 @@ public class Loja {
     public void exibirOfertas(List<ListaOferta> ofertas) {
         
         System.out.println("\n=========== OFERTAS ===========");
-        System.out.println("\n     !!!Ofertas da semana!!!\n");
+        System.out.println("\n    >>> Ofertas da semana <<< \n");
         System.out.println("----------------------------------");
         for (ListaOferta oferta : ofertas) {
             System.out.println(oferta.toString());

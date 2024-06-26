@@ -10,5 +10,4 @@ public class Categoria {
     public String getNomeCategoria() {
         return nome_categoria;
     }
-
 }

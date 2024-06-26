@@ -30,7 +30,6 @@ public class JogosController {
         ofertas.add(oferta4);
         ofertas.add(oferta5);
 
-
         // DESTAQUES
         ListaDestaque destaque1 = new ListaDestaque("ELDEN RING Shadow of the Erdtree", 154.90);
         ListaDestaque destaque2 = new ListaDestaque("Sniper Elite 4", 105.99);
@@ -45,7 +44,6 @@ public class JogosController {
         destaques.add(destaque4);
         destaques.add(destaque5);
 
-
         // FPS
         ListaJogo fps1 = new ListaJogo("Far Cry 5", 179.99);
         ListaJogo fps2 = new ListaJogo("Ghost Recon", 149.99);
@@ -53,13 +51,11 @@ public class JogosController {
         ListaJogo fps4 = new ListaJogo("CS2", 149.90);
         ListaJogo fps5 = new ListaJogo("VALORANT", 109.99);
 
-
         fps1.adicionarCategoria(new FPS("FPS", "Jogos de tiro em primeira pessoa"));
         fps2.adicionarCategoria(new FPS("FPS", "Jogos de tiro em primeira pessoa"));
         fps3.adicionarCategoria(new FPS("FPS", "Jogos de tiro em primeira pessoa"));
         fps4.adicionarCategoria(new FPS("FPS", "Jogos de tiro em primeira pessoa"));
         fps5.adicionarCategoria(new FPS("FPS", "Jogos de tiro em primeira pessoa"));
-
 
         jogos.add(fps1);
         jogos.add(fps2);
@@ -81,7 +77,6 @@ public class JogosController {
         rpg4.adicionarCategoria(new RPG("RPG", "Jogos de interpretacao de papeis"));
         rpg5.adicionarCategoria(new RPG("RPG", "Jogos de interpretacao de papeis"));
 
-
         jogos.add(rpg1);
         jogos.add(rpg2);
         jogos.add(rpg3);
@@ -100,7 +95,6 @@ public class JogosController {
         terror3.adicionarCategoria(new Terror("Terror", "Jogos com terror psicologico"));
         terror4.adicionarCategoria(new Terror("Terror", "Jogos com terror psicologico"));
         terror5.adicionarCategoria(new Terror("Terror", "Jogos com terror psicologico"));
-
 
         jogos.add(terror1);
         jogos.add(terror2);
@@ -134,7 +128,6 @@ public class JogosController {
         ListaJogo indie4 = new ListaJogo("LIMBO", 37.00);
         ListaJogo indie5 = new ListaJogo("Journey", 43.99);
 
-
         indie1.adicionarCategoria(new Indie("Indie", "Jogos independentes."));
         indie2.adicionarCategoria(new Indie("Indie", "Jogos independentes."));
         indie3.adicionarCategoria(new Indie("Indie", "Jogos independentes."));
@@ -154,20 +147,20 @@ public class JogosController {
         ListaJogo plataforma3 = new ListaJogo("Mega Man 11", 99.90);
         ListaJogo plataforma4 = new ListaJogo("Terraria", 32.99);
         ListaJogo plataforma5 = new ListaJogo("Cuphead", 36.99);
-
+        ListaJogo plataforma6 = new ListaJogo("Crypt Crawler", 33.33);
 
         plataforma1.adicionarCategoria(new Plataforma("Plataforma", " Jogos de plataformas"));
         plataforma2.adicionarCategoria(new Plataforma("Plataforma", " Jogos de plataformas"));
         plataforma3.adicionarCategoria(new Plataforma("Plataforma", " Jogos de plataformas"));
         plataforma4.adicionarCategoria(new Plataforma("Plataforma", " Jogos de plataformas"));
         plataforma5.adicionarCategoria(new Plataforma("Plataforma", " Jogos de plataformas"));
-
+        plataforma6.adicionarCategoria(new Plataforma("Plataforma", " Jogos de plataformas"));
 
         jogos.add(plataforma1);
         jogos.add(plataforma2);
         jogos.add(plataforma3);
         jogos.add(plataforma4);
         jogos.add(plataforma5);
-
+        jogos.add(plataforma6);
     }
 }
