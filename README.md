@@ -3,7 +3,7 @@
       Este projeto é uma aplicação de console em Java que simula uma loja de jogos. Ele permite que os usuários criem perfis, façam login, visualizem jogos, destaques,       ofertas, comprem jogos e adicionem jogos à lista de desejos.
 
    \----------------------/
-   #\Estrutura do Projeto/#
+ ## \Estrutura do Projeto/ ##
    \----------------------/
 
    ->Classes Principais<-
