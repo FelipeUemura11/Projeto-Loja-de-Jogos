@@ -3,7 +3,7 @@
    
    Este projeto é uma aplicação de console em Java que simula uma loja de jogos. Ele permite que os usuários criem perfis, façam login, visualizem jogos, destaques,       ofertas, comprem jogos e adicionem jogos à lista de desejos.
    
-   ## DETALHE: para poder alterar armazenar os dado do cadastro de conta e historico de compra precisa alterar o destino da pasta txt no código! ##
+   ## DETALHE: para poder armazenar os dado do cadastro de conta e historico de compra precisa alterar o destino da pasta txt no código! ##
 
    \---------------------->
  ## \Estrutura do Projeto/ ##
