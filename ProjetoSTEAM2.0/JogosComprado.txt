@@ -1,0 +1,6 @@
+=============================
+Nome:
+Email:
+Jogo comprado:
+Preco pago pelo jogo:
+----------------------------
