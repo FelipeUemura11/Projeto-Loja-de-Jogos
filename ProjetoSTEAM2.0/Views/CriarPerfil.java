@@ -48,9 +48,10 @@ public class CriarPerfil {
         // Adiciona o novo perfil na lista de cadastro e verifica com try/catch
         if(PerfilController.adicionarPerfil(pessoa, email, senha, novo_perfil)){
             System.out.println("\n >> Perfil criado com sucesso! << ");
-            File arquivo = new File("C:\\Users\\felip\\OneDrive\\Documents\\GitHub\\Projeto-Loja-de-Jogos\\ProjetoSTEAM2.0\\CadastroPessoas.txt");
+            File arquivo = new File("CadastroPessoas.txt");
 
-            try(BufferedWriter br = new BufferedWriter(new FileWriter(arquivo))) {
+            try(BufferedWriter br = new BufferedWriter(new FileWriter(arquivo, true))){
+                    br.write("--------------------\n");
                     br.write(" >> Nome: "+nome+ "\n");
                     br.write(" >> Email: "+email+ "\n");
                     br.close();
